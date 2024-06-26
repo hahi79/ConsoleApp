@@ -5,9 +5,9 @@
 #define __UTILITY_H
 
 enum Key {
-	ARROW_UP    = 0xe050,
+	ARROW_UP    = 0xe048,
 	ARROW_LEFT  = 0xe04b,
-	ARROW_DOWN  = 0xe048,
+	ARROW_DOWN  = 0xe050,
 	ARROW_RIGHT = 0xe04d,
 	DECIDE      = 0x0d,
 };

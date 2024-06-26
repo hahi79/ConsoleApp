@@ -25,15 +25,15 @@ Command GetPlayerCommand(TurnBattle *btl)
 		}
 		switch (GetKey()) {
 		case ARROW_UP:
-			cmd++;
-			if (cmd >= COMMAND_MAX) {
-				cmd = 0;
-			}
-			break;
-		case ARROW_DOWN:
 			cmd--;
 			if (cmd < 0) {
 				cmd = COMMAND_MAX - 1;
+			}
+			break;
+		case ARROW_DOWN:
+			cmd++;
+			if (cmd >= COMMAND_MAX) {
+				cmd = 0;
 			}
 			break;
 		case DECIDE:

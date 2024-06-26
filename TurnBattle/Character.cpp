@@ -70,13 +70,15 @@ void IndicateEnemy(Character* ch)
 	if (ch->isEraseAa == false) {
 		printf("%s", ch->aa);
 	}
-	printf("ＨＰ：%3d／%d\n", ch->hp, ch->maxHp);
+	printf("（ＨＰ：%3d／%d）\n", ch->hp, ch->maxHp);
 }
+// 攻撃力から与えるダメージを計算
 int CalcDamage(Character* ch)
 {
 	int dmg=  GetRand(ch->attack)+1;
 	return dmg;
 }
+// 名前を取得
 const char *GetName(Character* ch)
 {
 	return ch->name;
@@ -86,10 +88,12 @@ void SetEscapeCharacter(Character* ch)
 {
 	ch->isEscape = true;
 }
+// 逃げ出したか?
 bool IsEscapeCharacter(Character* ch)
 {
 	return ch->isEscape;
 }
+// アスキーアート消すをセット
 void SetEraseAa(Character* ch)
 {
 	ch->isEraseAa = true;

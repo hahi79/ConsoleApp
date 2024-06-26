@@ -42,6 +42,7 @@ bool ExecPlayerTurn(TurnBattle* btl,Command cmd)
 {
 	execCommand(btl,cmd, btl->player, btl->enemy);
 	if (IsDeadCharacter(btl->enemy)) {
+		SetEraseAa(btl->enemy);
 		DrawBattleScreen(btl);
 		printf("%s‚ğ@‚½‚¨‚µ‚½!\n", GetName(btl->enemy));
 		WaitKey();

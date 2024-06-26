@@ -14,30 +14,30 @@ int main()
 	Character zako;
 	TurnBattle btl;
 
-	SetCharacter(&player
-		,100   // HP
-		,15    // MP
-		,30    // 攻撃力
-		,"ゆうしゃ" // 名前
-		,"");   // アスキーアート
-	SetCharacter(&boss
-		,255    // HP
-		,0      // MP
-		,50     // 攻撃力
-		,"まおう", // 名前
+	SetCharacter(&player,
+		100,        // HP
+		15,         // MP
+		30,         // 攻撃力
+		"ゆうしゃ", // 名前
+		"");        // アスキーアート
+	SetCharacter(&boss,
+		255,      // HP
+		0,        // MP
+		50,       // 攻撃力
+		"まおう", // 名前
 		"　　Ａ＠Ａ\n" // アスキーアート
 		"ψ（▼皿▼）ψ"
 		);
-	SetCharacter(&zako
-		,3       // HP
-		,0       // MP
-		,2       // 攻撃力
-		,"スライム", // 名前 
+	SetCharacter(&zako,
+		3,          // HP
+		0,          // MP
+		2,          // 攻撃力
+		"スライム", // 名前 
 		"／・Д・＼\n" // アスキーアート
 		"～～～～～"
 		);
 
-	SetTurnBattle(&btl, &player, &boss);
+	SetTurnBattle(&btl, &player, &zako);// &boss);
 	StartTurnBattle(&btl);
 	IntroTurnBattle(&btl);
 	bool isEnd = false;
