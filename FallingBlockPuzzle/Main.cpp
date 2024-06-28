@@ -36,7 +36,7 @@ static void game()
 	SetupFallBlock(stage);
 
 	StartTimer(timer, 1); // FPS=1
-	while (stage->isGameOver == false) {
+	while (IsGameOver(stage) == false) {
 		// ˆê’èŠÔ‚²‚Æ‚É—‚¿ƒuƒƒbƒN‚ğ1‚Â—‚Æ‚·
 		if (IsInterval(timer)) {
 			MoveDownFallBlock(stage);
@@ -72,6 +72,4 @@ static void game()
 			}
 		}
 	}
-
-
 }
