@@ -1,11 +1,10 @@
 //======================================
 //	ターン制バトル コマンド入力
 //======================================
-#include "Command.h"
+#include "CommandUI.h"
 #include "TurnBattle.h" // DrawBattlScreen()
 #include "Utility.h"  // GetKey()
 #include <stdio.h>  // printf()
-
 
 const char* CommandName[] = {
 	"たたかう",

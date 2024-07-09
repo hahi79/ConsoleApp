@@ -3,12 +3,33 @@
 //======================================
 #include "Character.h"
 #include "TurnBattle.h"
-#include "Command.h"
+#include "CommandUI.h"
 #include "Utility.h"
+#include <stdio.h>  // printf()
+// 関数プロトタイプ
+void game();
 
 int main()
 {
 	InitRand();
+
+	int c;
+	do {
+		game();
+		printf("もう一度(y/n)?");
+		while (true) {
+			c = GetKey();
+			if (c == 'y' || c == 'n') {
+				break;
+			}
+		}
+	} while (c == 'y');
+
+	return 0;
+}
+
+void game()
+{
 	Character player;
 	Character boss;
 	Character zako;
@@ -27,7 +48,7 @@ int main()
 		"まおう", // 名前
 		"　　Ａ＠Ａ\n" // アスキーアート
 		"ψ（▼皿▼）ψ"
-		);
+	);
 	SetCharacter(&zako,
 		3,          // HP
 		0,          // MP
@@ -35,9 +56,9 @@ int main()
 		"スライム", // 名前 
 		"／・Д・＼\n" // アスキーアート
 		"～～～～～"
-		);
+	);
 
-	SetTurnBattle(&btl, &player, &zako);// &boss);
+	SetTurnBattle(&btl, &player, &boss);
 	StartTurnBattle(&btl);
 	IntroTurnBattle(&btl);
 	bool isEnd = false;
@@ -55,5 +76,4 @@ int main()
 		}
 		NextTurnBattle(&btl);
 	}
-	return 0;
 }

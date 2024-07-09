@@ -4,7 +4,7 @@
 #ifndef __TURNBATTLE_H
 #define __TURNBATTLE_H
 #include "Character.h"
-#include "Command.def"
+#include "Command.h"
 
 typedef struct {
 	Character* player;
