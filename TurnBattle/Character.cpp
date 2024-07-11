@@ -75,7 +75,7 @@ void IndicateEnemy(Character* ch)
 // UŒ‚—Í‚©‚ç—^‚¦‚éƒ_ƒ[ƒW‚ğŒvZ
 int CalcDamage(Character* ch)
 {
-	int dmg=  GetRand(ch->attack)+1;
+	int dmg = GetRand(ch->attack) + 1;
 	return dmg;
 }
 // –¼‘O‚ğæ“¾

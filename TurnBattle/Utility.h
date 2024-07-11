@@ -4,6 +4,16 @@
 #ifndef __UTILITY_H
 #define __UTILITY_H
 
+extern const char* EscBLACK;
+extern const char* EscRED;
+extern const char* EscGREEN;
+extern const char* EscYELLOW;
+extern const char* EscBLUE;
+extern const char* EscMAZENTA;
+extern const char* EscCYAN;
+extern const char* EscWHITE;
+extern const char* EscDEFAULT;
+
 enum Key {
 	ARROW_UP    = 0xe048,
 	ARROW_LEFT  = 0xe04b,
@@ -19,6 +29,8 @@ int GetRand(int max);
 void WaitKey();
 // キー入力取得
 Key GetKey();
+// キー入力ありか?
+bool KeyAvailable();
 // スクリーン消去
 void ClearScreen();
 

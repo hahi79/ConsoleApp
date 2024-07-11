@@ -8,15 +8,15 @@
 #include <stdio.h> // printf()
 #include <conio.h> // _getch()
 
-const char* EscBLACK   = "\033[30m";
-const char* EscRED     = "\033[31m";
-const char* EscGREEN   = "\033[32m";
-const char* EscYELLOW  = "\033[33m";
-const char* EscBLUE    = "\033[34m";
-const char* EscMAZENTA = "\033[35m";
-const char* EscCYAN    = "\033[36m";
-const char* EscWHITE   = "\033[37m";
-const char* EscDEFAULT = "\033[39m";
+const char* EscBLACK   = "\x1b[30m";
+const char* EscRED     = "\x1b[31m";
+const char* EscGREEN   = "\x1b[32m";
+const char* EscYELLOW  = "\x1b[33m";
+const char* EscBLUE    = "\x1b[34m";
+const char* EscMAZENTA = "\x1b[35m";
+const char* EscCYAN    = "\x1b[36m";
+const char* EscWHITE   = "\x1b[37m";
+const char* EscDEFAULT = "\x1b[39m";
 
 // 乱数初期化
 void InitRand()
@@ -45,7 +45,11 @@ Key GetKey()
 	}
 	return (Key)key;
 }
-
+// キー入力ありか?
+bool KeyAvailable()
+{
+	return _kbhit();
+}
 // スクリーン消去
 void ClearScreen()
 {

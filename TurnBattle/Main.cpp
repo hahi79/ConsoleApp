@@ -4,7 +4,7 @@
 #include "Character.h"
 #include "TurnBattle.h"
 #include "CommandUI.h"
-#include "Utility.h"
+#include "Utility.h"  // InitRand(),GetKey()
 #include <stdio.h>  // printf()
 // 関数プロトタイプ
 void game();
