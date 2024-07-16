@@ -74,9 +74,11 @@ void StepSimulation(Field* field)
 	}
 	field->currentIdx = nextIdx;
 }
+
 // ƒpƒ^[ƒ“‚ð“]‘—‚·‚é
 void TransferPattern(Field* field, Pattern* pattern)
 {
+	field->isLoopCells = pattern->isLoopCells;
 	int dstX = field->width / 2 - pattern->width / 2;
 	int dstY = field->height / 2 - pattern->height / 2;
 	clearCells(field, field->cells[field->currentIdx]);

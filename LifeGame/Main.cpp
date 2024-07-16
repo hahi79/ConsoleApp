@@ -48,10 +48,11 @@ void game()
         {0,0,0,0,0,0,0,0,0,0}
     };
     Pattern pattern = {
-        patternWidth,
-        patternHeight,
-        (bool*)_pattern,
-        "",
+        patternWidth,     // パターンの横幅
+        patternHeight,    // パターンの縦幅
+        (bool*)_pattern,  // パターン
+        "",               // パターンの名前
+        true,             // ループ
     };
 
 
@@ -78,13 +79,16 @@ void game()
                 Pattern* pat = SelectPattern();
                 if (pat != nullptr) {
                     TransferPattern(&field, pat);
+                    DrawField(&field);
+                    WaitKey();
                 }
             }
             else{
-                // SPACEキーで１ステップずつ
+                // その他のキーで一時停止
                 do{
                     StepSimulation(&field);
                     DrawField(&field);
+                    // Spaceキーで１ステップずつ
                 }while (GetKey() == SPACE);
             }
         }
