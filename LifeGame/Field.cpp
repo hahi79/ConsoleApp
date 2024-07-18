@@ -101,15 +101,15 @@ static void transferPattern(Field* field, int dstX, int dstY, int srcWid, int sr
 static int getLivingCount(Field* field,bool *cells, int x, int y)
 {
 	int count = 0;
-	for (int yy = y - 1; yy<=y+1; yy++) {
-		for (int xx = x - 1; xx <= x + 1; xx++) {
-			if (xx != x || yy != y) {   // (x,y)は除く
-				if (getCells(field, cells, xx, yy)) {
-					count++;
-				}
-			}
-		}
-	}
+	if (getCells(field, cells, x - 1, y - 1)) count++;
+	if (getCells(field, cells, x + 0, y - 1)) count++;
+	if (getCells(field, cells, x + 1, y - 1)) count++;
+	if (getCells(field, cells, x - 1, y + 0)) count++;
+	// 指定位置(x+0,y+0) はカウントしない
+	if (getCells(field, cells, x + 1, y + 0)) count++;
+	if (getCells(field, cells, x - 1, y + 1)) count++;
+	if (getCells(field, cells, x + 0, y + 1)) count++;
+	if (getCells(field, cells, x + 1, y + 1)) count++;
 	return count;
 }
 // cellsクリア
