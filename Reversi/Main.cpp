@@ -53,14 +53,14 @@ void game(Reversi* reversi, Vector2List* v2list)
 			}
 			else {
 				// CPUプレーヤ
-				DrawScreen(reversi, dummyPos,IN_PLAY);
+				DrawScreen(reversi, dummyPos, IN_PLAY);
 				WaitKey();
 				// 打てるリストからランダムに選ぶ.
 				ClearVector2List(v2list);
 				ListCanPlaceAll(reversi, turn, v2list);
-				int count=GetCountVector2List(v2list);
-				int idx=GetRand(count);
-				placePos=GetVector2List(v2list, idx);
+				int count = GetCountVector2List(v2list);
+				int idx = GetRand(count);
+				placePos = GetVector2List(v2list, idx);
 			}
 			CheckCanPlace(reversi, turn, placePos, true);
 			SetBoard(reversi, placePos.x, placePos.y, turn);
@@ -72,11 +72,12 @@ void game(Reversi* reversi, Vector2List* v2list)
 				break;
 			}
 			// 「打てない」表示
-			DrawScreen(reversi, dummyPos,NO_PLACE);
+			DrawScreen(reversi, dummyPos, NO_PLACE);
 			WaitKey();
 		}
 		NextTurn(reversi);
 	}
+	// リザルト表示
 	DrawScreen(reversi, dummyPos, RESULT);
 	WaitKey();
 }

@@ -38,7 +38,7 @@ int GetCountVector2List(Vector2List* list)
 Vector2 GetVector2List(Vector2List* list, int idx)
 {
 	static Vector2 dummyPos = { -1,-1 };
-	if (idx < list->ptr) {
+	if (0 <= idx && idx < list->ptr) {
 		return list->array[idx];
 	}
 	return  dummyPos;
