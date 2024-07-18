@@ -41,7 +41,7 @@ static void game()
 		if (IsInterval(timer)) {
 			MoveDownFallBlock(stage);
 		}
-		// キー入力で落ちブロッグ移動・回転
+		// キー入力で落ちブロック移動・回転
 		if (KeyAvailable()) {
 			FallBlock fallBlock = GetFallBlock(stage);
 			bool change = false;

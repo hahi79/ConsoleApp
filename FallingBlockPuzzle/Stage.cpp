@@ -65,7 +65,7 @@ Block GetField(Stage* stage, int x, int y)
 	}
 	return BLK_WALL;
 }
-// 落下ブロック(+移動オフセット)がフィールド衝突?
+// 落下ブロックがフィールド衝突?
 bool BlockIntersectField(Stage* stage,FallBlock *fallBlock)
 {
 	BlockShape *shape = &fallBlock->shape;
