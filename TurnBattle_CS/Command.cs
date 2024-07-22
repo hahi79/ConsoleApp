@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TurnBattle = TurnBattle_CS.TurnBattle;
 using Utility = GP2.Utility;
-using Key = GP2.Key;
 using System.Reflection.Metadata.Ecma335;
 
 namespace TurnBattle_CS
@@ -43,21 +42,21 @@ namespace TurnBattle_CS
                     Utility.Printf("{0}{1}\n", cur, commandName[i]);
                 }
                 switch (Utility.GetKey()) {
-                    case Key.ARROW_U:
+                    case ConsoleKey.UpArrow:
                         cmd--;
                         if (cmd < 0)
                         {
                             cmd = cmdMax - 1;
                         }
                         break;
-                    case Key.ARROW_D:
+                    case ConsoleKey.DownArrow:
                         cmd++;
                         if (cmd >= cmdMax)
                         {
                             cmd = 0;
                         }
                         break;
-                    case Key.DECIDE:
+                    case ConsoleKey.Enter:
                         return (Command)cmd;
                 }
             }

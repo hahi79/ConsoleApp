@@ -9,15 +9,6 @@ using System.Threading.Tasks;
 
 namespace GP2
 {
-    enum Key
-    {
-        ARROW_U = ConsoleKey.UpArrow,
-        ARROW_D = ConsoleKey.DownArrow,
-        ARROW_L = ConsoleKey.LeftArrow,
-        ARROW_R = ConsoleKey.RightArrow,
-        DECIDE = ConsoleKey.Enter,
-    }
-
     static class Utility
     {
         public const string EscBLACK   = "\x1b[30m";
@@ -47,10 +38,15 @@ namespace GP2
             Console.ReadKey(true);
         }
         // キー取得
-        public static Key GetKey()
+        public static ConsoleKey GetKey()
         {
             ConsoleKeyInfo info = Console.ReadKey(true);
-            return (Key)info.Key;
+            return info.Key;
+        }
+        // キーが押されたか?
+        public static bool KeyAvailable()
+        {
+            return Console.KeyAvailable;
         }
         // 画面クリア
         public static void ClearScreen()
