@@ -3,7 +3,6 @@
 //======================================
 #include "Character.h"
 #include "Vector2.h"
-#include "Utility.h"  // GetKey()
 
 // キャラクター初期化
 void InitCharacter(Character* ch, Chara id, Vector2 initPos)

@@ -6,7 +6,6 @@
 #include "Character.h"
 #include "Vector2List.h"
 
-
 typedef enum {
 	MAZE_NONE=' ',   // ‹ó”’
 	MAZE_WALL='#',   // •Ç

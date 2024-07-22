@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeGame_CS", "LifeGame_CS.csproj", "{BAFD5110-87EC-42EA-8DB8-1417B57783F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAFD5110-87EC-42EA-8DB8-1417B57783F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFD5110-87EC-42EA-8DB8-1417B57783F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFD5110-87EC-42EA-8DB8-1417B57783F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFD5110-87EC-42EA-8DB8-1417B57783F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {315C81EE-747B-4943-8537-8ADD3138BAAC}
+	EndGlobalSection
+EndGlobal
