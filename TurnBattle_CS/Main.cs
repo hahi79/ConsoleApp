@@ -10,6 +10,27 @@ namespace TurnBattle_CS
         static int Main()
         {
             Utility.InitRand();
+
+            ConsoleKey c;
+            do
+            {
+                Game();
+                Utility.Printf("もう一度(y/n)?");
+                Utility.PrintOut();
+                while (true)
+                {
+                    c = Utility.GetKey();
+                    if (c == ConsoleKey.Y || c == ConsoleKey.N)
+                    {
+                        break;
+                    }
+                }
+            } while (c == ConsoleKey.Y) ;
+            return 0;
+        }
+        
+        static void Game()
+        { 
             Character player = new Character(
                 100,        // HP
                 15,         // MP
@@ -55,7 +76,6 @@ namespace TurnBattle_CS
                 }
                 btl.NextTurn();
             }
-            return 0;
         }
     } // class
 } // namespace 
