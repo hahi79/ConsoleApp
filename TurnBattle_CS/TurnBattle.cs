@@ -30,7 +30,7 @@ namespace TurnBattle_CS
         public void Intro()
         {
             DrawBattleScreen();
-            Utility.Printf("{0}が　あらわれた!",m_enemy.Name);
+            Utility.Printf("{0}が　あらわれた!\n",m_enemy.Name);
             Utility.PrintOut();
             Utility.WaitKey();
         }

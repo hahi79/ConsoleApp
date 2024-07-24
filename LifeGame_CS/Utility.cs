@@ -68,8 +68,7 @@ namespace GP2
         // printf()関数
         public static void Printf(string fmt,params Object[] list)
         {
-            string tmp = string.Format(fmt, list);
-            s_console.Append(tmp);
+            s_console.AppendFormat(fmt, list);
         }
         // putchar()関数
         public static void Putchar(Char c)
