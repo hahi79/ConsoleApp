@@ -3,13 +3,13 @@
 //======================================
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+//using System.Linq;
+//using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using Character=TurnBattle_CS.Character;
-using Command = TurnBattle_CS.Command;
+//using System.Threading.Tasks;
+//using System.Web;
+//using Character=TurnBattle_CS.Character;
+//using Command = TurnBattle_CS.Command;
 using Utility=GP2.Utility;
 
 namespace TurnBattle_CS

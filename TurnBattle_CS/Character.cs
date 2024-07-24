@@ -3,12 +3,12 @@
 //======================================
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices;
+//using System.Linq;
+//using System.Reflection.Metadata.Ecma335;
+//using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+//using System.Threading.Tasks;
+//using System.Web;
 using Utility=GP2.Utility;
 
 namespace TurnBattle_CS
