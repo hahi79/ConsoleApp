@@ -38,6 +38,7 @@ namespace LifeGame_CS
         {
             var cells = m_cells[m_currentIdx];
             drawCells(cells);
+            Utility.PrintOut();
         }
         
         // シミュレーションを１ステップ進める

@@ -48,21 +48,39 @@ namespace GP2
         {
             return Console.KeyAvailable;
         }
+
+        static StringBuilder s_console = new StringBuilder();
+        //--------------------------------------
+        //      コンソール出力
+        //--------------------------------------
+        // 使い方 : StringBuilderにため込んで PrintOut()で実際の描画を行う
+        //    Utility.ClearScreen();
+        //    Utilitu.Printf(....);
+        //    Utility.Putchar(.);
+        //    ....
+        //    Utility.PrintOut();
+        //--------------------------------------
         // 画面クリア
         public static void ClearScreen()
         {
-            Console.Clear();
+            s_console.Clear();
         }
         // printf()関数
         public static void Printf(string fmt,params Object[] list)
         {
             string tmp = string.Format(fmt, list);
-            Console.Write(tmp);
+            s_console.Append(tmp);
         }
         // putchar()関数
         public static void Putchar(Char c)
         {
-            Console.Write(c);
+            s_console.Append(c);
+        }
+        // プリント出力
+        public static void PrintOut()
+        {
+            Console.Clear();
+            Console.Write(s_console.ToString());
         }
     } // class Utility
 } // namespace

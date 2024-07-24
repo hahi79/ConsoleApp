@@ -20,6 +20,7 @@ namespace LifeGame_CS
             {
                 game();
                 Utility.Printf("もう一度(y/n)?");
+                Utility.PrintOut();
                 while (true)
                 {
                     c = Utility.GetKey();

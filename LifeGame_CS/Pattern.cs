@@ -147,6 +147,7 @@ namespace LifeGame_CS
                     string cur=(sel==i)? "＞" : "　";
                     Utility.Printf("{0}{1}\n", cur, patterns[i].m_name);
                 }
+                Utility.PrintOut();
                 switch(Utility.GetKey())
                 {
                     case ConsoleKey.UpArrow:
@@ -169,8 +170,6 @@ namespace LifeGame_CS
                         return null;
                 }
             }
-        }
-
-
+        } // class
     }
-}
+} // namespace 
