@@ -5,7 +5,7 @@ using GP2;
 
 namespace LifeGame_CS
 {
-    class LifeGame
+    class LifeGameMain
     {
         const int FIELD_WIDTH = 48;
         const int FIELD_HEIGHT = 48;
@@ -18,7 +18,7 @@ namespace LifeGame_CS
             ConsoleKey c;
             do
             {
-                game();
+                Game();
                 Utility.Printf("もう一度(y/n)?");
                 Utility.PrintOut();
                 while (true)
@@ -34,7 +34,7 @@ namespace LifeGame_CS
             return 0;
         }
         // ゲーム処理
-        static void game()
+        static void Game()
         {
             const int patternWidth = 10;
             const int patternHeight = 8;
