@@ -41,6 +41,7 @@ namespace TurnBattle_CS
                     string cur=(i==cmd)?"＞":"　";
                     Utility.Printf("{0}{1}\n", cur, commandName[i]);
                 }
+                Utility.PrintOut();
                 switch (Utility.GetKey()) {
                     case ConsoleKey.UpArrow:
                         cmd--;

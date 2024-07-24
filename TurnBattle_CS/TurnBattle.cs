@@ -30,8 +30,8 @@ namespace TurnBattle_CS
         public void Intro()
         {
             DrawBattleScreen();
-            var tmp = string.Format("{0}が　あらわれた!",m_enemy.Name);
-            Console.WriteLine(tmp);
+            Utility.Printf("{0}が　あらわれた!",m_enemy.Name);
+            Utility.PrintOut();
             Utility.WaitKey();
         }
         // 戦闘開始
@@ -59,6 +59,7 @@ namespace TurnBattle_CS
                 m_enemy.IsEraseAa = true;
                 DrawBattleScreen();
                 Utility.Printf("{0}を　たおした!\n", m_enemy.Name);
+                Utility.PrintOut();
                 Utility.WaitKey();
                 return true;
             }
@@ -72,6 +73,7 @@ namespace TurnBattle_CS
             {
                 DrawBattleScreen();
                 Utility.Printf("あなたは　しにました\n");
+                Utility.PrintOut();
                 Utility.WaitKey();
                 return true;
             }
@@ -86,12 +88,14 @@ namespace TurnBattle_CS
                 case Command.Fight:
                     DrawBattleScreen();
                     Utility.Printf("{0}の　こうげき!\n", offense.Name);
+                    Utility.PrintOut();
                     Utility.WaitKey();
 
                     dmg = offense.CalcDamage();
                     defense.Damage(dmg);
                     DrawBattleScreen();
                     Utility.Printf("{0}に　{1}の　ダメージ!\n", defense.Name, dmg);
+                    Utility.PrintOut();
                     Utility.WaitKey();
 
                     break;
@@ -100,21 +104,27 @@ namespace TurnBattle_CS
                     {
                         DrawBattleScreen();
                         Utility.Printf("ＭＰが　たりない!\n");
+                        Utility.PrintOut();
                         Utility.WaitKey();
                         break;
                     }
                     offense.UseSpell();
                     DrawBattleScreen();
                     Utility.Printf("{0}は　ヒールを　となえた!\n", offense.Name);
+                    Utility.PrintOut();
+                    Utility.WaitKey();
+
                     offense.Recover();
                     DrawBattleScreen();
                     Utility.Printf("{0}のきずが　かいふくした!\n", offense.Name);
+                    Utility.PrintOut();
                     Utility.WaitKey();
                     break;
 
                 case Command.Escape:
                     DrawBattleScreen();
                     Utility.Printf("{0}は　にげだした!\n", offense.Name);
+                    Utility.PrintOut();
                     Utility.WaitKey();
                     offense.IsEscape = true;
                     break;
