@@ -9,7 +9,7 @@ void AddVector2(Vector2 *a, Vector2 *b)
 	a->x += b->x;
 	a->y += b->y;
 }
-// ８方向のベクター取得
+// 4方向のベクター取得
 Vector2 GetDirVector2(DIRECTION d)
 {
 	static Vector2 dirVector2[] = {

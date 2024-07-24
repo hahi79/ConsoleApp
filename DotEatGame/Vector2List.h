@@ -1,5 +1,5 @@
 //======================================
-//	ÉäÉoÅ[ÉV Vector2List
+//	Vector2List
 //======================================
 #ifndef __VECTOR2_LIST_H
 #define __VECTOR2_LIST_H

@@ -1,5 +1,5 @@
 //======================================
-//	ƒŠƒo[ƒV Vector2List
+//	Vector2List
 //======================================
 #include "Vector2List.h"
 #include <stdio.h>   // printf()

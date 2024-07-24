@@ -76,7 +76,7 @@ static void MoveMonsterChase(Stage*stage,Character* ch)
 static void MoveMonsterAmbush(Stage* stage, Character* ch)
 {
 	Character* player = stage->player;
-	Vector2 playerDir = Vector2Sub(player->pos, player->lastPos);
+	Vector2 playerDir = GetCharacterDir(player);
 	Vector2 targetPos;
 	targetPos.x = playerDir.x * 3 + player->pos.x;
 	targetPos.y = playerDir.y * 3 + player->pos.y;
@@ -122,12 +122,17 @@ static Vector2 GetRandomPosition(Stage* stage, Character* ch)
 // キャラがターゲットへ移動するための移動先を取得
 static Vector2 GetChasePosition(Stage* stage, Character* ch, Vector2 targetPos)
 {
+	//
+	//  distance[] を初期化します(INIT_DISTANCEで埋める)
+	//
 	for (int y = 0; y < MAZE_HEIGHT; y++) {
 		for (int x = 0; x < MAZE_WIDTH; x++) {
 			SetDistance(stage, x, y, INIT_DISTANCE);
 		}
 	}
-	// ScanDistance 1st
+	//
+	// ScanDistance 初手(chの退路以外の経路をスキャン)
+	// 
 	Vector2 dir;
 	Vector2 newPos;
 	SetDistance(stage, ch->pos.x, ch->pos.y, 0);
@@ -139,10 +144,14 @@ static Vector2 GetChasePosition(Stage* stage, Character* ch, Vector2 targetPos)
 			ScanDistance(stage, newPos, 1);
 		}
 	}
+//     デバッグ(distance[]を表示してみる)
 //	PrintDistance(stage);
+//
 	int dist = GetDistance(stage, targetPos.x, targetPos.y);
 	if (dist != INIT_DISTANCE) {
+		//
 		// targetPosからさかのぼって dist=1 までたどる
+		//
 		ClearVector2List(&stage->v2list);
 		AddVector2List(&stage->v2list, targetPos);
 		while (dist > 1) {
@@ -161,6 +170,7 @@ static Vector2 GetChasePosition(Stage* stage, Character* ch, Vector2 targetPos)
 			}
 			int cnt = GetCountVector2List(&stage->v2temp);
 			if (cnt == 0) {
+				// 経路なしは、ありえないはず
 				printf("dist:%d\n", dist);
 				PrintVector2List(&stage->v2list);
 				PrintDistance(stage);
@@ -168,13 +178,17 @@ static Vector2 GetChasePosition(Stage* stage, Character* ch, Vector2 targetPos)
 			CopyVector2List(&stage->v2list, &stage->v2temp);
 			dist--;
 		}
+		//
 		// dist=1 が移動先
+		//
 		int count = GetCountVector2List(&stage->v2list);
 		int idx = GetRand(count);
 		Vector2 routePos = GetVector2List(&stage->v2list, idx);
 		return routePos;
 	}
+	//
 	// targetPosにつながる経路がなければ、ランダムな行先を
+	//
 	return GetRandomPosition(stage, ch);
 }
 // Mazeをスキャンしてdistance[][]に距離を書き込む(再帰)
@@ -195,6 +209,7 @@ static void ScanDistance(Stage* stage, Vector2 pos, int dist)
 		}
 	}
 }
+// distance[]のゲッター
 static int GetDistance(Stage* stage, int x, int y)
 {
 	if (IsInMaze(x, y)) {
@@ -202,6 +217,7 @@ static int GetDistance(Stage* stage, int x, int y)
 	}
 	return LARGE_DISTANCE;
 }
+// distance[]のセッター
 static void SetDistance(Stage* stage, int x, int y, int dist)
 {
 	if (IsInMaze(x, y)) {
@@ -209,7 +225,7 @@ static void SetDistance(Stage* stage, int x, int y, int dist)
 	}
 }
 
-
+// デバッグ(distance[] をプリント)
 static void PrintDistance(Stage* stage)
 {
 	for (int y = 0; y < MAZE_HEIGHT; y++) {
