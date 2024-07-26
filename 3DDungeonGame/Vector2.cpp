@@ -1,6 +1,7 @@
 //======================================
 //	2Dベクター
 //======================================
+#include <assert.h>
 #include "Vector2.h"
 
 // ベクター加算(a+=b)
@@ -10,14 +11,15 @@ void AddVector2(Vector2 *a, Vector2 *b)
 	a->y += b->y;
 }
 // ８方向のベクター取得
-Vector2 GetDirVector2(DIRECTION d)
+Vector2 GetDirVector2(Direction d)
 {
 	static Vector2 dirVector2[] = {
-		{0,-1}, //DIR_UP
-		{-1,0 },//DIR_LEFT
-		{0,1},  //DIR_DOWN,
-		{1,0},  //DIR_RIGHT,
+		{ 0,-1},  //DIR_NORTH
+		{-1, 0},  //DIR_WEST
+		{ 0, 1},  //DIR_SOUTH,
+		{ 1, 0},  //DIR_EAST,
 	};
+	assert(0 <= d && d < DIR_MAX);
 	return dirVector2[d];
 }
 

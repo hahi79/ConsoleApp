@@ -17,7 +17,7 @@ void game()
     
 }
 
-void DwarEnging()
+void DwarEnding()
 {
     printf(
         "@–@–@‚b‚n‚m‚f‚q‚`‚s‚t‚k‚`‚s‚h‚n‚m‚r@–@–\n"

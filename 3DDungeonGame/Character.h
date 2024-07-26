@@ -9,10 +9,11 @@
 
 typedef struct {
 	Vector2 pos;      // À•W
-	DIRECTION dir;    // Œü‚¢‚Ä‚¢‚é•ûˆÊ
+	Direction dir;    // Œü‚¢‚Ä‚¢‚é•ûˆÊ
 }Character;
 
-void InitCharacter(Character* ch, Vector2 pos, DIRECTION dir);
+// ƒLƒƒƒ‰‰Šú‰»
+void InitCharacter(Character* ch, Vector2 pos, Direction dir);
 
 
 #endif __CHARACTER_H
