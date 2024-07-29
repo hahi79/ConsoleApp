@@ -10,6 +10,8 @@ enum Key {
 	ARROW_DOWN  = 0xe050,
 	ARROW_RIGHT = 0xe04d,
 	DECIDE      = 0x0d,
+	SPACE       = 0x20,
+	ESC         = 0x1b,
 };
 // 乱数初期化
 void InitRand();

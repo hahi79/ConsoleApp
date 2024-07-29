@@ -1,8 +1,9 @@
 //======================================
-//	ディレクション(方向)
+//	3Dダンジョン ディレクション(方向)
 //======================================
 #ifndef __DIRECTION_H
 #define __DIRECTION_H
+#include "Vector2.h"
 
 // ４方向
 // マップ上では「北西南東」の意味だが
@@ -14,5 +15,13 @@ typedef enum {
 	DIR_EAST,   // 東(右方)
 	DIR_MAX,
 } Direction;
+
+
+// ４方向のベクター取得
+Vector2 GetDirVector2(Direction d);
+// ディレクションの加算
+Direction DirectionAdd(Direction dir, int add);
+
+
 
 #endif // __DIRECTION_H

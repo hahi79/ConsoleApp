@@ -1,5 +1,5 @@
 //======================================
-//	ロケーション
+//	3Dダンジョン ロケーション
 //======================================
 #ifndef __LOCATION_H
 #define __LOCATION_H
@@ -15,11 +15,12 @@ typedef enum {
 	LOC_LEFT,        // 左
 	LOC_RIGHT,       // 右
 	LOC_CENTER,      // 中心
+	LOC_MAX,
 } Location;
 
 // 方向とロケーションから、オフセットベクター取得
 Vector2 GetLocationVector2(Direction dir, Location loc);
 // 方向とロケーションから、アスキーアート文字列を取得
-const char* GetLocationAA(Direction dir,Location loc);
+const char* GetLocationAA(Location loc, Direction dir);
 
 #endif // __LOCATION_H

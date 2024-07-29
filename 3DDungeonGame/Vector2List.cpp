@@ -33,7 +33,7 @@ void AddVector2List(Vector2List* list, Vector2 pos)
 void DelVector2List(Vector2List* list, int idx)
 {
 	if (idx < list->ptr) {
-		while (idx + 1 < list < ptr) {
+		while (idx + 1 < list -> ptr) {
 			list->array[idx] = list->array[idx + 1];
 			idx++;
 		}

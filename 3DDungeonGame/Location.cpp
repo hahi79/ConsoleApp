@@ -1,12 +1,13 @@
 //======================================
 //	ロケーション
 //======================================
+#include "Direction.h"
 #include "Location.h"
 #include <assert.h>
 
 static Vector2 locations[DIR_MAX][LOC_MAX] = {
 	// DIR_NORTH
-	{                                          x:-1 + 0 + 1
+	{            //                            x:-1 + 0 + 1
 		{-1,-1}, // LOC_FRONT_LEFT  左前(A)     +--+--+--+
 		{ 1,-1}, // LOC_FRONT_RIGHT 右前(B)     |Ａ|Ｃ|Ｂ|-1 
 		{ 0,-1}, // LOC_FRONT       前(C)       +--+--+--+
@@ -16,7 +17,7 @@ static Vector2 locations[DIR_MAX][LOC_MAX] = {
 	             //                             +--+--+--+
 	},
 	// DIR_WEST
-	{                                          x:-1 + 0 + 1
+	{            //                            x:-1 + 0 + 1
 		{-1, 1}, // LOC_FRONT_LEFT  左前(A)     +--+--+--+
 		{-1,-1}, // LOC_FRONT_RIGHT 右前(B)     |Ｂ|Ｅ|　|-1 
 		{-1, 0}, // LOC_FRONT       前(C)       +--+--+--+
@@ -26,7 +27,7 @@ static Vector2 locations[DIR_MAX][LOC_MAX] = {
                  //                             +--+--+--+
 	},
 	// DIR_SOUTH
-	{                                          x:-1 + 0 + 1
+	{            //                            x:-1 + 0 + 1
 		{ 1, 1}, // LOC_FRONT_LEFT  左前(A)     +--+--+--+
 		{-1, 1}, // LOC_FRONT_RIGHT 右前(B)     |　|　|　|-1 
 		{ 0, 1}, // LOC_FRONT       前(C)       +--+--+--+
@@ -36,13 +37,13 @@ static Vector2 locations[DIR_MAX][LOC_MAX] = {
 	             //                             +--+--+--+
 	},
 	// DIR_EAST
-	{                                          x:-1 + 0 + 1
-		{-1, 1}, // LOC_FRONT_LEFT  左前(A)     +--+--+--+
-		{-1,-1}, // LOC_FRONT_RIGHT 右前(B)     |　|　|　|-1 
-		{-1, 0}, // LOC_FRONT       前(C)       +--+--+--+
-		{ 0,+1}, // LOC_LEFT        左(D)       |Ｅ|→|Ｄ|+0
-		{ 0,-1}, // LOC_RIGHT       右(E)       +--+--+--+
-		{ 0, 0}, // LOC_CENTER      中心        |Ｂ|Ｃ|Ａ|+1
+	{            //                            x:-1 + 0 + 1
+		{ 1,-1}, // LOC_FRONT_LEFT  左前(A)     +--+--+--+
+		{ 1, 1}, // LOC_FRONT_RIGHT 右前(B)     |　|Ｄ|Ａ|-1 
+		{ 1, 0}, // LOC_FRONT       前(C)       +--+--+--+
+		{ 0,-1}, // LOC_LEFT        左(D)       |　|→|Ｃ|+0
+		{ 0, 1}, // LOC_RIGHT       右(E)       +--+--+--+
+		{ 0, 0}, // LOC_CENTER      中心        |　|Ｅ|Ｂ|+1
 	             //                             +--+--+--+
 	},
 };
@@ -278,7 +279,7 @@ const char* aaTable[LOC_MAX][DIR_MAX] =
 	},
 };
 
-const char* GetLocationAA(Direction dir, Location loc)
+const char* GetLocationAA(Location loc,Direction dir)
 {
 	assert(0 <= dir && dir < DIR_MAX);
 	assert(0 <= loc && loc < LOC_MAX);

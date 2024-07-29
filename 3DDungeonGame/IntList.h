@@ -25,5 +25,5 @@ void ClearIntList(IntList* list);
 // リストをコピー
 void CopyIntList(IntList* dst, IntList* src);
 // リストをプリントする
-void PrintIntList(Vector2List* list);
+void PrintIntList(IntList* list);
 #endif //  __INT_LIST_H

@@ -10,10 +10,16 @@
 typedef struct {
 	Vector2 pos;      // À•W
 	Direction dir;    // Œü‚¢‚Ä‚¢‚é•ûˆÊ
-}Character;
+} Character;
 
 // ƒLƒƒƒ‰‰Šú‰»
 void InitCharacter(Character* ch, Vector2 pos, Direction dir);
+// Œã‚ë‚ğŒü‚­
+void TurnBackCharacter(Character* ch);
+// ¶‚ğŒü‚­
+void TurnLeftCharacter(Character* ch);
+// ‰E‚ğŒü‚­
+void TurnRightCharacter(Character* ch);
 
 
 #endif __CHARACTER_H
