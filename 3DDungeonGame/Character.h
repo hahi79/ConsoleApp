@@ -21,5 +21,4 @@ void TurnLeftCharacter(Character* ch);
 // ‰E‚ðŒü‚­
 void TurnRightCharacter(Character* ch);
 
-
 #endif __CHARACTER_H

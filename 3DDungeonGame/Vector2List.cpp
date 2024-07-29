@@ -78,5 +78,4 @@ void PrintVector2List(Vector2List* list)
 		printf("(%d,%d)", pos.x, pos.y);
 	}
 	putchar('\n');
-
 }

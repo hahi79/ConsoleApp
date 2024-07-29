@@ -17,7 +17,7 @@ Vector2 GetDirVector2(Direction d)
 	return dirVector2[d];
 }
 
-// ディレクトョン加算
+// ディレクション加算
 Direction DirectionAdd(Direction dir, int add)
 {
 	int tmp = dir + add;

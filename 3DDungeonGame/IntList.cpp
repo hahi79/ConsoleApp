@@ -65,5 +65,4 @@ void PrintIntList(IntList* list)
 		printf("%d ", list->array[i]);
 	}
 	putchar('\n');
-
 }

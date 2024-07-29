@@ -42,16 +42,16 @@ void game()
         // プレーヤ移動
         bool isEsc=MovePlayer(stage);
         if (isEsc) {
-            return;
+            break;
         }
         // ゴール?
         if (IsGoalPlayer(stage)) {
+            // エンディング描画
+            DrawEnding();
+            WaitKey();
             break;
         }
     }
-    // エンディング描画
-    DrawEnding();
-    WaitKey();
 }
 
 void DrawEnding()

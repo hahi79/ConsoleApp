@@ -23,7 +23,6 @@ typedef struct {
 	bool isForMap;   // UI forMap or for3D
 } Stage;
 
-
 // ステージ初期化
 void InitializeStage(Stage* stage);
 // 3D描画
@@ -38,6 +37,5 @@ void SetMazeWall(Stage* stage, Vector2 pos, Direction dir,bool value);
 bool GetMazeWall(Stage* stage, Vector2 pos, Direction dir);
 // 位置は迷路内?
 bool IsInsideMaze(Vector2 pos);
-
 
 #endif //  __STAGE_H

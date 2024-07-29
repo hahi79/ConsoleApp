@@ -5,7 +5,6 @@
 #include "Direction.h"
 #include "Vector2.h"
 
-
 // ‰Šú‰»
 void InitCharacter(Character* ch, Vector2 pos, Direction dir)
 {
