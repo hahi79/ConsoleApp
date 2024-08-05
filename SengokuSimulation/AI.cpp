@@ -136,7 +136,7 @@ static bool isFrontCastle(Stage* stage, CastleId castleId)
 	}
 	return false;
 }
-
+// ƒ\[ƒg‚Ì‚½‚ß‚Ì”äŠrŠÖ
 static int cmpCastleByTroop(int a,int b)
 {
 	int troop_a=GetCastleTroopCount(s_stage, (CastleId)a);

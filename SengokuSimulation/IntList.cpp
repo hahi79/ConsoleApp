@@ -58,6 +58,7 @@ void CopyIntList(IntList* dst, IntList* src)
 		AddIntList(dst, value);
 	}
 }
+// リストをプリント(デバッグ用)
 void PrintIntList(IntList* list)
 {
 	printf("IntList(%d):", list->ptr);

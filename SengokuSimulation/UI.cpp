@@ -48,9 +48,9 @@ Command InputPlayerTurn(Stage* stage, Castle* castle, CastleId* outTarget, int* 
 	printf("%c しんぐんしない\n", CANCEL);
 	*listp++ = CANCEL;
 	*listp = '\0';
-
+	putchar('\n');
+	
 	char c = getKeyInList(list);
-
 	if (c == CANCEL) {
 		return CMD_Cancel;
 	}
@@ -71,7 +71,7 @@ Command InputPlayerTurn(Stage* stage, Castle* castle, CastleId* outTarget, int* 
 	printf("%sに　なんぜんにん　しんぐん　しますか？（0～%d）\n"
 		, GetCastleName(stage, targetId)	// 進軍先の城の名前
 		, troopMax);					    // 進軍兵数
-
+	putchar('\n');
 	int troopCount = getKeyInRange(0, troopMax);
 
 	*outTarget = targetId;

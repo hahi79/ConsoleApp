@@ -21,5 +21,4 @@ void RecordChronology(Chronology* chro, const char* fmt, ...);
 // ƒvƒŠƒ“ƒg‚·‚é
 void PrintChronology(Chronology* chro);
 
-
 #endif // __CHRONOLOGY_H

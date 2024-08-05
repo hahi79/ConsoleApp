@@ -1,5 +1,5 @@
 //======================================
-//	戦国シミュレーション  君主
+//	戦国シミュレーション  城主
 //======================================
 #ifndef __LORD_H
 #define __LORD_H
@@ -12,6 +12,5 @@ const char* GetLordFirstName(LordId id);
 const char* GetLordFamilyName(LordId id);
 // 城主のマップ上の名前を取得
 const char* GetLordMapName(LordId id);
-
 
 #endif //  __LORD_H

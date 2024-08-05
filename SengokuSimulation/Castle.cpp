@@ -132,7 +132,6 @@ Castle castles[] =
 		"岡豊城",       // 名前
 		LORD_CHOSOKABE, // 城主
 		TROOP_BASE,     // 兵数
-
 		// 接続された城のリスト
 		{
 			CASTLE_NIJO,            // 二条城
@@ -148,7 +147,6 @@ Castle castles[] =
 		"内城",         // 名前
 		LORD_SIMAZU,    // 城主
 		TROOP_BASE,     // 兵数
-
 		//  接続された城のリスト
 		{
 			CASTLE_YOSHIDAKORIYAMA, // 吉田郡山城

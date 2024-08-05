@@ -75,5 +75,4 @@ const char* GetLordFamilyName(Stage *stage,LordId id);
 // 城主のマップ上の名前を取得
 const char* GetLordMapName(Stage* stage,LordId id);
 
-
 #endif // __STAGE_H

@@ -70,11 +70,11 @@ void IntroStage(Stage* stage, CastleId playerCastle)
 // ÉXÉNÉäÅ[Éìï`âÊ
 void DrawScreen(Stage* stage, DrawMode mode, int turn)
 {
-	Castle* turnCastle = nullptr;
-	if (mode == DM_Turn) {
-		CastleId id = stage->turnOrder[turn];
-		turnCastle = GetCastle(stage, id);
-	}
+//	Castle* turnCastle = nullptr;
+//	if (mode == DM_Turn) {
+//		CastleId id = stage->turnOrder[turn];
+//		turnCastle = GetCastle(stage, id);
+//	}
 	ClearScreen();
 	printf("%s",
 		//0        1         2         3         4   
@@ -105,14 +105,14 @@ void DrawScreen(Stage* stage, DrawMode mode, int turn)
 		LordId owner = GetCastleOwner(castle);
 		int troopCount = GetCastleTroopCount(castle);
 		const char* mapName = GetCastleMapName(castle);
-		printf(owner == stage->playerLord ? EscYELLOW : EscDEFAULT);
-		printf(turnCastle == castle ? EscBgBLUE : EscBgDEFAULT);
+//		printf(owner == stage->playerLord ? EscYELLOW : EscDEFAULT);
+//		printf(turnCastle == castle ? EscBgBLUE : EscBgDEFAULT);
 		PrintCursor(curx, cury);
 		printf("%d%s%d", i, mapName, troopCount);
 		PrintCursor(curx, cury + 1);
 		printf("%s", GetLordMapName(stage, owner));
-		printf(EscDEFAULT);
-		printf(EscBgDEFAULT);
+//		printf(EscDEFAULT);
+//		printf(EscBgDEFAULT);
 	}
 	PrintCursor(0, 18);
 }
@@ -289,7 +289,7 @@ static void SiegeBattle(Stage* stage, LordId offenseLord, int offenseTroopCount,
 {
 	ClearScreen();
 	printf("Å` %sÇÃÅ@ÇΩÇΩÇ©Ç¢Å`\n", GetCastleName(stage, defenseCastle));
-	//Castle* castle = GetCastle(stage, defenseCastle);
+	putchar('\n');
 	LordId defenseLord = GetCastleOwner(stage, defenseCastle);
 	int defenseTroopCount = GetCastleTroopCount(stage, defenseCastle);
 
