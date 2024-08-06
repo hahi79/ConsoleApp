@@ -18,7 +18,7 @@ Castle castles[] =
 			CASTLE_ODAWARA,     // 小田原城
 			CASTLE_NONE,
 		},
-		44, 2,      // 描画位置
+		45, 2,      // 描画位置
 		"米沢",     // マップ上の名前
 	},
 	// CASTLE_KASUGAYAMA 春日山城
@@ -33,7 +33,7 @@ Castle castles[] =
 			CASTLE_GIFU,             // 岐阜城
 			CASTLE_NONE,
 		},
-		36, 3,          // 描画位置
+		37, 3,          // 描画位置
 		"春日",         // マップ上の名前
 	},
 	// CASTLE_TSUTSUJIGASAKI 躑躅ヶ崎館
@@ -48,7 +48,7 @@ Castle castles[] =
 			CASTLE_OKAZAKI,     // 岡崎城
 			CASTLE_NONE,
 		},
-		38, 6,          // 描画位置
+		39, 6,          // 描画位置
 		"躑躅",         // マップ上の名前
 	},
 	// CASTLE_ODAWARA    小田原城
@@ -63,7 +63,7 @@ Castle castles[] =
 			CASTLE_OKAZAKI,         // 岡崎城
 			CASTLE_NONE,
 		},
-		40, 9,      // 描画位置
+		41, 9,      // 描画位置
 		"小田",     // マップ上の名前
 	},
 	// CASTLE_OKAZAKI    岡崎城
@@ -78,7 +78,7 @@ Castle castles[] =
 			CASTLE_GIFU,            // 岐阜城
 			CASTLE_NONE,
 		},
-		32, 9,          // 描画位置
+		33, 9,          // 描画位置
 		"岡崎",         // マップ上の名前
 	},
 	// CASTLE_GIFU   岐阜城
@@ -93,7 +93,7 @@ Castle castles[] =
 			CASTLE_NIJO,        // 二条城
 			CASTLE_NONE,
 		},
-		26, 8,      // 描画位置
+		27, 8,      // 描画位置
 		"岐阜",     // マップ上の名前
 	},
 	// CASTLE_NIJO   二条城
@@ -108,7 +108,7 @@ Castle castles[] =
 			CASTLE_OKO,             // 岡豊城
 			CASTLE_NONE,
 		},
-		18, 9,          // 描画位置
+		19, 9,          // 描画位置
 		"二条",         // マップ上の名前
 	},
 	// CASTLE_YOSHIDAKORIYAMA    吉田郡山城
@@ -124,7 +124,7 @@ Castle castles[] =
 			CASTLE_UCHI,    // 内城
 			CASTLE_NONE,
 		},
-		10, 9,          // 描画位置
+		11, 9,          // 描画位置
 		"吉田",         // マップ上の名前
 	},
 	// CASTLE_OKO    岡豊城
@@ -139,7 +139,7 @@ Castle castles[] =
 			CASTLE_UCHI,            // 内城
 			CASTLE_NONE,
 		},
-		12,12,          // 描画位置
+		13,12,          // 描画位置
 		"岡豊",         // マップ上の名前
 	},
 	// CASTLE_UCHI  内城
@@ -153,7 +153,7 @@ Castle castles[] =
 			CASTLE_OKO,             // 岡豊城
 			CASTLE_NONE,
 		},
-		 2,14,          // 描画位置
+		 3,14,          // 描画位置
 		"内城",         // マップ上の名前
 	},
 };

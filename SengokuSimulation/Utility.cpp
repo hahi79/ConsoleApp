@@ -82,10 +82,8 @@ void ClearScreen()
 // カーソル位置セット
 void PrintCursor(int curx, int cury)
 {
-	// curx に +1 するのは謎。WindowsTerminalのバグか!?
-	printf( "\x1b[%d;%dH", cury, curx + 1);
-	//printf("\x1b[%d;%df", cury, curx + 1);
-	//printf( "\x1b[%dd\x1b[%dG", cury, curx+1);
+	// curx,cury は 1～
+	printf( "\x1b[%d;%dH", cury, curx);
 }
 // カーソル保存
 void SaveCursor()
