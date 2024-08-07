@@ -51,5 +51,7 @@ void PrintCursor(int curx, int cury);
 void SaveCursor();
 // カーソル復元
 void RestoreCursor();
+// 時間待ち(m秒)
+void Sleep_mSec(int mSec);
 
 #endif // __UTILITY_H
