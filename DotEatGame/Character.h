@@ -24,8 +24,6 @@ typedef struct {
 void InitCharacter(Character* ch, Chara id, Vector2 initPos);
 // キャラクター移動
 void MoveCharacter(Character* ch, Vector2 pos);
-// キャラクタの向きベクターを取得
-Vector2 GetCharacterDir(Character* ch);
 // キャラクターの向きベクターを取得する
 Vector2 GetCharacterDir(Character* ch);
 
