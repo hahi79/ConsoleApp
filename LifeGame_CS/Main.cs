@@ -1,7 +1,9 @@
 ﻿//======================================
 //      ライフゲーム　メイン
 //======================================
-using GP2;
+using System;  // ConsoleKey
+using Utility = GP2.Utility;
+using IntervalTimer = GP2.IntervalTimer;
 
 namespace LifeGame_CS
 {
@@ -9,7 +11,6 @@ namespace LifeGame_CS
     {
         const int FIELD_WIDTH = 48;
         const int FIELD_HEIGHT = 48;
-
 
         static int Main()
         {

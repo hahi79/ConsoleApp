@@ -1,12 +1,8 @@
 ﻿//======================================
 //      ライフゲーム　フィールド
 //======================================
-using GP2;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utility = GP2.Utility;
 
 namespace LifeGame_CS
 {
