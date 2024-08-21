@@ -1,11 +1,7 @@
 ﻿//======================================
 //      ユーティリティ
 //======================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text;  // StringBuilder
 
 namespace GP2
 {
@@ -20,6 +16,16 @@ namespace GP2
         public const string EscCYAN    = "\x1b[36m";
         public const string EscWHITE   = "\x1b[37m";
         public const string EscDEFAULT = "\x1b[39m";
+
+        public const string EscBgBLACK   = "\x1b[40m";
+        public const string EscBgRED     = "\x1b[41m";
+        public const string EscBgGREEN   = "\x1b[42m";
+        public const string EscBgYELLOW  = "\x1b[43m";
+        public const string EscBgBLUE    = "\x1b[44m";
+        public const string EscBgMAZENTA = "\x1b[45m";
+        public const string EscBgCYAN    = "\x1b[46m";
+        public const string EscBgWHITE   = "\x1b[47m";
+        public const string EscBgDEFAULT = "\x1b[49m";
 
         private static Random s_rand = new Random();
         // 乱数初期化
@@ -38,6 +44,13 @@ namespace GP2
             Console.ReadKey(true);
         }
         // キー取得
+        //  ConsoleKey.UpArrow    カーソル上
+        //  ConsoleKey.DownArrow  カーソル下
+        //  ConsoleKey.LeftArrow  カーソル左
+        //  ConsoleKey.RightArrow カーソル右
+        //  ConsoleKey.Return     リターンキー
+        //  ConsoleKey.Escape     ESCキー
+        //  ConsoleKey.Spacebar   スペースキー
         public static ConsoleKey GetKey()
         {
             ConsoleKeyInfo info = Console.ReadKey(true);
@@ -66,7 +79,7 @@ namespace GP2
             s_console.Clear();
         }
         // printf()関数
-        public static void Printf(string fmt,params Object[] list)
+        public static void Printf(string fmt, params Object[] list)
         {
             s_console.AppendFormat(fmt, list);
         }

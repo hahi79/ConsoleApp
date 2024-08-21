@@ -2,14 +2,7 @@
 //      キャラクター
 //======================================
 using System;
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Reflection.Metadata.Ecma335;
-//using System.Runtime.InteropServices;
-using System.Text;
-//using System.Threading.Tasks;
-//using System.Web;
-using Utility=GP2.Utility;
+using Utility = GP2.Utility;
 
 namespace TurnBattle_CS
 {
@@ -79,7 +72,7 @@ namespace TurnBattle_CS
         // プレーヤ表示
         public void IndicatePlayer()
         {
-            Utility.Printf("{0}\n",m_name);
+            Utility.Printf("{0}\n", m_name);
             Utility.Printf("ＨＰ：{0,3}／{1}　ＭＰ：{2,2}／{3}\n", m_hp, m_maxHp, m_mp, m_maxMp);
         }
         // 敵表示
@@ -87,7 +80,7 @@ namespace TurnBattle_CS
         {
             if (m_isEraseAa == false)
             {
-                Utility.Printf("{0}",m_aa);
+                Utility.Printf("{0}", m_aa);
             }
             Utility.Printf("（ＨＰ：{0,3}／{1}）\n", m_hp, m_maxHp);
         }
@@ -99,33 +92,19 @@ namespace TurnBattle_CS
         // 名前を取得
         public String Name
         {
-            get
-            {
-                return m_name;
-            }
+            get { return m_name; }
         }
         // にげたか?
         public bool IsEscape
         {
-            get
-            {
-                return m_isEscape;
-            }
-            set
-            {
-                m_isEscape = value;
-            }
+            get{ return m_isEscape; }
+            set{ m_isEscape = value; }
         }
         // アスキーアート消去設定
         public bool IsEraseAa
         {
-            get
-            {
-                return m_isEraseAa;
-            }
-            set {
-                m_isEraseAa = value;
-            }
+            get { return m_isEraseAa; }
+            set { m_isEraseAa = value; }
         }
     } // class Character
 } // namespace

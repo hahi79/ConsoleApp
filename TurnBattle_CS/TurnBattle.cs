@@ -1,16 +1,8 @@
 ﻿//======================================
 //      ターン制バトル
 //======================================
-using System;
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Security.Cryptography;
-using System.Text;
-//using System.Threading.Tasks;
-//using System.Web;
-//using Character=TurnBattle_CS.Character;
-//using Command = TurnBattle_CS.Command;
-using Utility=GP2.Utility;
+using System; 
+using Utility = GP2.Utility;
 
 namespace TurnBattle_CS
 {
@@ -30,7 +22,7 @@ namespace TurnBattle_CS
         public void Intro()
         {
             DrawBattleScreen();
-            Utility.Printf("{0}が　あらわれた!\n",m_enemy.Name);
+            Utility.Printf("{0}が　あらわれた!\n", m_enemy.Name);
             Utility.PrintOut();
             Utility.WaitKey();
         }
@@ -80,7 +72,7 @@ namespace TurnBattle_CS
             return false;
         }
         // コマンド実行
-        private void execCommand(Command cmd,Character offense,Character defense)
+        private void execCommand(Command cmd, Character offense, Character defense)
         {
             int dmg = 0;
             switch (cmd)

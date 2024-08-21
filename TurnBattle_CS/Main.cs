@@ -1,6 +1,7 @@
 ﻿//======================================
 //      ターン制バトル メイン
 //======================================
+using System;    // ConsoleKey
 using Utility = GP2.Utility;
 
 namespace TurnBattle_CS
@@ -10,6 +11,7 @@ namespace TurnBattle_CS
         static int Main()
         {
             Utility.InitRand();
+            Audio.Setup();
 
             ConsoleKey c;
             do
@@ -25,12 +27,14 @@ namespace TurnBattle_CS
                         break;
                     }
                 }
-            } while (c == ConsoleKey.Y) ;
+            } while (c == ConsoleKey.Y);
+
+            Audio.Remove();
             return 0;
         }
-        
+
         static void Game()
-        { 
+        {
             Character player = new Character(
                 100,        // HP
                 15,         // MP
@@ -68,7 +72,7 @@ namespace TurnBattle_CS
                 {
                     break;
                 }
-                cmd = CommandUI.GetEnemyCommand();
+                cmd = CommandAI.GetEnemyCommand();
                 isEnd = btl.ExecEnemyTurn(cmd);
                 if (isEnd)
                 {

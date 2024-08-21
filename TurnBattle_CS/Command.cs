@@ -1,13 +1,8 @@
 ﻿//======================================
 //      コマンド
 //======================================using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TurnBattle = TurnBattle_CS.TurnBattle;
+using System;     // ConsoleKey
 using Utility = GP2.Utility;
-using System.Reflection.Metadata.Ecma335;
 
 namespace TurnBattle_CS
 {
@@ -38,17 +33,19 @@ namespace TurnBattle_CS
                 btl.DrawBattleScreen();
                 for (int i = 0; i < cmdMax; i++)
                 {
-                    string cur=(i==cmd)?"＞":"　";
+                    string cur = (i == cmd) ? "＞" : "　";
                     Utility.Printf("{0}{1}\n", cur, commandName[i]);
                 }
                 Utility.PrintOut();
-                switch (Utility.GetKey()) {
+                switch (Utility.GetKey())
+                {
                     case ConsoleKey.UpArrow:
                         cmd--;
                         if (cmd < 0)
                         {
                             cmd = cmdMax - 1;
                         }
+                        Audio.PlaySe(SeId.Cursor);
                         break;
                     case ConsoleKey.DownArrow:
                         cmd++;
@@ -56,16 +53,21 @@ namespace TurnBattle_CS
                         {
                             cmd = 0;
                         }
+                        Audio.PlaySe(SeId.Cursor);
                         break;
                     case ConsoleKey.Enter:
+                        Audio.PlaySe(SeId.Decide);
                         return (Command)cmd;
                 }
             }
         }
+    } // class CommandUI
+    static class CommandAI
+    {
         // 敵のコマンド取得
         public static Command GetEnemyCommand()
         {
             return Command.Fight;
         }
-    } // class CommandUI
+    } // class CommandAI
 } // namespace
