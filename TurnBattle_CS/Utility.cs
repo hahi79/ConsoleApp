@@ -88,6 +88,12 @@ namespace GP2
         {
             s_console.Append(c);
         }
+        // カーソル位置セット
+        public static void PrintCursor(int curx,int cury)
+        {
+            // curx,cury は 1～
+            s_console.AppendFormat("\x1b[{0};{0}H", curx, cury);
+        }
         // プリント出力
         public static void PrintOut()
         {
