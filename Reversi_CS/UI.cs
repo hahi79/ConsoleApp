@@ -1,10 +1,7 @@
-﻿//using GP2;
+﻿//======================================
+//      リバーシ　UI
+//======================================
 using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Runtime.InteropServices.Marshalling;
-//using System.Text;
-//using System.Threading.Tasks;
 using Utility = GP2.Utility;
 using Vector2 = GP2.Vector2;
 
@@ -19,7 +16,7 @@ namespace Reversi_CS
                 "ＷＡＴＣＨ",   
         };
         // モード選択
-        public static Mode SelectMode()
+        public static GameMode SelectMode()
         {
             int sel = 0;
             while (true)
@@ -49,7 +46,7 @@ namespace Reversi_CS
                         }
                         break;
                     case ConsoleKey.Enter:
-                        return (Mode)sel;
+                        return (GameMode)sel;
                 }
             }
         }

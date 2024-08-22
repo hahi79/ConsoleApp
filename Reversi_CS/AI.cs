@@ -1,9 +1,10 @@
-﻿using GP2;
+﻿//======================================
+//      リバーシ AI(CPUプレイヤー思考)
+//======================================
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;  // List<T>
+using Utility = GP2.Utility;
+using Vector2 = GP2.Vector2;
 
 namespace Reversi_CS
 {
@@ -18,5 +19,5 @@ namespace Reversi_CS
             int idx = Utility.GetRand(list.Count);
             return list[idx];
         }
-    }
-}
+    } // class
+} // namespace

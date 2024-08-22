@@ -37,7 +37,7 @@ namespace Reversi_CS
         static void Game()
         {
             Vector2 dummyPos = new Vector2(-1, -1);
-            Mode mode = UI.SelectMode();
+            GameMode mode = UI.SelectMode();
             Reversi reversi = new Reversi(mode);
             while (true)
             {

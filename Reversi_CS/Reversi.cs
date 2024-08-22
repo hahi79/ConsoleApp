@@ -1,19 +1,16 @@
 ﻿//======================================
 //      リバーシ　
 //======================================
-//using System;
 using System.Diagnostics;  // Debug
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+using System.Collections.Generic; // List<T>
 using Vector2 = GP2.Vector2;
-using GP2;
+using Direction8 = GP2.Direction8;
+using Utility = GP2.Utility;
 
 namespace Reversi_CS
 {
     // ゲームモード
-    enum Mode
+    enum GameMode
     {
         _1P,
         _2P,
@@ -39,16 +36,18 @@ namespace Reversi_CS
     {
         public const int BOARD_WID = 8;
         public const int BOARD_HEI = 8;
-        protected Cell[,] m_board = new Cell[BOARD_HEI, BOARD_WID];
+        protected Cell[,] m_board;
         protected Cell m_turn;
-        protected Mode m_mode;
+        protected GameMode m_mode;
 
         // コンストラクター
-        public Reversi(Mode mode)
+        public Reversi(GameMode mode)
         {
             m_mode = mode;
+
+            m_board = new Cell[BOARD_HEI, BOARD_WID];
             // 盤を初期化
-            for(int y=0; y<BOARD_HEI; y++)
+            for (int y=0; y<BOARD_HEI; y++)
             {
                 for(int x=0; x<BOARD_WID; x++)
                 {
@@ -61,13 +60,11 @@ namespace Reversi_CS
             SetBoard(4, 4, Cell.White);
             m_turn = Cell.Black;
         }
-
         // プロパティ turn
         public Cell turn
         {
             get { return m_turn; }
         }
-
         // 次のターンへ
         public void NextTurn()
         {
@@ -251,11 +248,11 @@ namespace Reversi_CS
         {
             switch (m_mode)
             {
-                case Mode._1P:
+                case GameMode._1P:
                     return m_turn == Cell.Black;
-                case Mode._2P:
+                case GameMode._2P:
                     return true;
-                case Mode._Watch:
+                case GameMode._Watch:
                     return false;
             }
             Debug.Assert(false);
