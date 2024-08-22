@@ -1,7 +1,6 @@
 ﻿//======================================
 //      落ち物バズル 落ちプロック
 //======================================
-using BlockShape = FallingBlockPuzzle_CS.BlockShape;
 using Utility = GP2.Utility;
 
 namespace FallingBlockPuzzle_CS

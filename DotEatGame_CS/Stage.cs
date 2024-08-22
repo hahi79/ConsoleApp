@@ -1,8 +1,8 @@
 ﻿//======================================
 //	ドットイートゲーム　Stage
 //======================================using System;
-using GP2;
-using Character = DotEatGame_CS.Character;
+using Vector2 = GP2.Vector2;
+using Utility = GP2.Utility;
 using System.Diagnostics;          // Debug
 using System.Collections.Generic;  // List<T>
 
@@ -172,13 +172,11 @@ namespace DotEatGame_CS
             pos.y = (pos.y + MAZE_HEIGHT) % MAZE_HEIGHT;
             return pos;
         }
-
         // 描画ワークにキャラを書き込む
         protected void setCharaToDrawMaze(Character ch)
         {
             m_drawMaze[ch.pos.y, ch.pos.x] =(Maze) ch.id;
         }
-
         protected string getMazeAA(Maze c)
         {
             switch (c)

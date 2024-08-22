@@ -1,15 +1,8 @@
 ﻿//======================================
-//	ドットイートゲーム　Main
+//	ドットイートゲーム　UI
 //======================================
 using Vector2 = GP2.Vector2;
-using Stage = DotEatGame_CS.Stage;
-using GP2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+using Utility = GP2.Utility;
 
 namespace DotEatGame_CS
 {
@@ -39,6 +32,5 @@ namespace DotEatGame_CS
                 }
             }
         }
-
-    }
-}
+    } // class
+} // namespace

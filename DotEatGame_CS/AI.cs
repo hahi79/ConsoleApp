@@ -6,8 +6,7 @@ using Direction4 = GP2.Direction4;
 using Utility = GP2.Utility;
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design; // List<T>
+using System.Collections.Generic;  // List<T>
 
 namespace DotEatGame_CS
 {

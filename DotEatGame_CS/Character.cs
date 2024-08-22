@@ -67,6 +67,5 @@ namespace DotEatGame_CS
             m_tmp.y = y;
             return m_tmp;
         }
-
     } // class
 } // namespace

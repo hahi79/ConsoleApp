@@ -170,14 +170,12 @@ namespace FallingBlockPuzzle_CS
                 }
             }
         }
-
         static string[] s_blockAA = new string[]{
                 "　",
                 "＋",
                 "◆",
                 "◇",
             };
-
         // 画面描画
         public void DrawScreen()
         {
@@ -231,7 +229,6 @@ namespace FallingBlockPuzzle_CS
             tmp.Y = 0;
             m_fallBlock = tmp;
         }
-
         // フィールドに落ちブロックを書き込む
         protected static void writeFallBlockToField(Block[,] field, FallBlock fallBlock, Block blk)
         {
@@ -258,6 +255,5 @@ namespace FallingBlockPuzzle_CS
             return 0 <= x && x < FIELD_WIDTH
                 && 0 <= y && y < FIELD_HEIGHT;
         }
-
     } // class
 } // namespace 
