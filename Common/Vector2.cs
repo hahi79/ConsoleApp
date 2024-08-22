@@ -70,12 +70,12 @@ namespace GP2
             Vector2 c = new Vector2(a.m_x - b.m_x, a.m_y - b.m_y);
             return c;
         }
-	// 乗算
-	public static Vector2 operator *(Vector2 a, int k)
-	{
-	    Vector2 c = new Vector2(a.m_x * k, a.m_y * k);
-	    return c;
-	}
+        // 乗算
+        public static Vector2 operator *(Vector2 a, int k)
+        {
+            Vector2 c = new Vector2(a.m_x * k, a.m_y * k);
+            return c;
+        }
         // 等価?
         public static bool operator ==(Vector2 a, Vector2 b)
         {
