@@ -2,7 +2,7 @@
 //      2Dベクター
 //======================================
 using System;  // Console
-using System.Collections.Genric;  // List<T>
+using System.Collections.Generic;  // List<T>
 using System.Diagnostics; // Debug
 
 namespace GP2

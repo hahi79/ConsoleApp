@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Utility.cs" />
+    <Compile Remove="Vector2.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Common\Utility.cs" Link="Utility.cs" />
+    <Compile Include="..\Common\Vector2.cs" Link="Vector2.cs" />
+  </ItemGroup>
+
 </Project>
