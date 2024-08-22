@@ -1,15 +1,8 @@
 ﻿//======================================
-//      キャラクター
+//      ターン制バトル キャラクター
 //======================================
 using System;
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Reflection.Metadata.Ecma335;
-//using System.Runtime.InteropServices;
-using System.Text;
-//using System.Threading.Tasks;
-//using System.Web;
-using Utility=GP2.Utility;
+using Utility = GP2.Utility;
 
 namespace ClassicRPG_CS
 {
@@ -99,33 +92,19 @@ namespace ClassicRPG_CS
         // 名前を取得
         public String Name
         {
-            get
-            {
-                return m_name;
-            }
+            get { return m_name; }
         }
         // にげたか?
         public bool IsEscape
         {
-            get
-            {
-                return m_isEscape;
-            }
-            set
-            {
-                m_isEscape = value;
-            }
+            get { return m_isEscape; }
+            set { m_isEscape = value; }
         }
         // アスキーアート消去設定
         public bool IsEraseAa
         {
-            get
-            {
-                return m_isEraseAa;
-            }
-            set {
-                m_isEraseAa = value;
-            }
+            get { return m_isEraseAa; }
+            set { m_isEraseAa = value; }
         }
         // 全パラメータ回復
         public void RecoverAllStatus()

@@ -1,8 +1,7 @@
 ﻿//======================================
-//      ターン制バトル メイン
+//      王道RPG メイン
 //======================================
 using Utility = GP2.Utility;
-using UI = ClassicRPG_CS.UI;
 
 namespace ClassicRPG_CS
 {

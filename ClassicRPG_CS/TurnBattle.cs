@@ -2,15 +2,7 @@
 //      ターン制バトル
 //======================================
 using System;
-using System.Collections.Generic;
-//using System.Linq;
-//using System.Security.Cryptography;
-using System.Text;
-//using System.Threading.Tasks;
-//using System.Web;
-//using Character=ClassicRPG_CS.Character;
-//using Command = ClassicRPG_CS.Command;
-using Utility=GP2.Utility;
+using Utility = GP2.Utility;
 
 namespace ClassicRPG_CS
 {

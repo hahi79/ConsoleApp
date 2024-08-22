@@ -1,13 +1,7 @@
 ﻿//======================================
-//      コマンド
+//      ターン制バトル コマンド
 //======================================using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TurnBattle = ClassicRPG_CS.TurnBattle;
 using Utility = GP2.Utility;
-using System.Reflection.Metadata.Ecma335;
 
 namespace ClassicRPG_CS
 {
@@ -38,7 +32,7 @@ namespace ClassicRPG_CS
                 btl.DrawBattleScreen();
                 for (int i = 0; i < cmdMax; i++)
                 {
-                    string cur=(i==cmd)?"＞":"　";
+                    string cur = (i == cmd) ? "＞" : "　";
                     Utility.Printf("{0}{1}\n", cur, commandName[i]);
                 }
                 Utility.PrintOut();
@@ -62,10 +56,13 @@ namespace ClassicRPG_CS
                 }
             }
         }
+    } // class UI
+    static class AI
+    { 
         // 敵のコマンド取得
         public static Command GetEnemyCommand()
         {
             return Command.Fight;
         }
-    } // class CommandUI
+    } // class AI
 } // namespace

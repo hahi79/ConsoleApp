@@ -1,13 +1,7 @@
 ﻿//======================================
-//      マップデータ
+//      王道RPG マップデータ
 //======================================
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassicRPG_CS
 {

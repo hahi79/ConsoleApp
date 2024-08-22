@@ -106,5 +106,10 @@ namespace GP2
             Console.Clear();
             Console.Write(s_console.ToString());
         }
+        // m秒スリープ
+        public static void Sleep_mSec(int mSec)
+        {
+            System.Threading.Thread.Sleep(mSec);
+        }
     } // class
 } // namespace

@@ -1,12 +1,7 @@
 ﻿//======================================
-//      マップスペック
+//      王道RPG マップスペック
 //======================================
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassicRPG_CS
 {
@@ -88,7 +83,6 @@ namespace ClassicRPG_CS
             m_nextMap_B = nextB;
             m_isBattleEncount = isBattleEncount;
         }
-
         protected char[,] CreateArray(string[] array)
         {
             char[,] tmp = new char[MAP_HEIGHT, MAP_WIDTH];
@@ -115,15 +109,10 @@ namespace ClassicRPG_CS
             }
             return outOfMap;
         }
-
         protected bool IsInMap(int x,int y)
         {
             return 0 <= x && x < MAP_WIDTH
                 && 0 <= y && y < MAP_HEIGHT;
         }
-
     } // class
-
-
-
 } // namespace

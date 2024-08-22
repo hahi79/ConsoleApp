@@ -1,12 +1,6 @@
 ﻿//======================================
-//      ステージ
+//      王道RPG ステージ
 //======================================
-using GP2;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Security.Cryptography;
-using MapData = ClassicRPG_CS.MapData;
 using Utility = GP2.Utility;
 
 namespace ClassicRPG_CS
@@ -132,7 +126,7 @@ namespace ClassicRPG_CS
                 {
                     break;
                 }
-                cmd = UI.GetEnemyCommand();
+                cmd = AI.GetEnemyCommand();
                 isEnd = btl.ExecEnemyTurn(cmd);
                 if (isEnd)
                 {
