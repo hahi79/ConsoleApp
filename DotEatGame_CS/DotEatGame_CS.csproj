@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Common\IntervalTimer.cs" Link="IntervalTimer.cs" />
+    <Compile Include="..\Common\Utility.cs" Link="Utility.cs" />
+    <Compile Include="..\Common\Vector2.cs" Link="Vector2.cs" />
+  </ItemGroup>
+
 </Project>
