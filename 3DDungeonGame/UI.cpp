@@ -59,9 +59,6 @@ void MovePlayerForMap(Stage* stage, Key c)
 	case ARROW_DOWN:  d = DIR_SOUTH; break;
 	case ARROW_LEFT:  d = DIR_WEST; break;
 	case ARROW_RIGHT: d = DIR_EAST; break;
-	case ' ':
-		stage->isForMap = !stage->isForMap;
-		break;
 	}
 	if (d < DIR_MAX) {
 		if (player->dir != d) {
@@ -101,9 +98,6 @@ void MovePlayerFor3D(Stage* stage, Key c)
 		break;
 	case ARROW_RIGHT: // ‰E‚ðŒü‚­
 		TurnRightCharacter(player);
-		break;
-	case ' ':
-		stage->isForMap = !stage->isForMap;
 		break;
 	}
 }
