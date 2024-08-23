@@ -16,12 +16,12 @@ namespace _3DDungeonGame_CS
         const int GOAL_X = MAZE_WIDTH - 1;
         const int GOAL_Y = MAZE_HEIGHT - 1;
 
-        static string[] FloorPlayer = new string[]
+        static char[] FloorPlayer = new char[]
         {
-            "Å™",  // North
-            "Å©",  // West
-            "Å´",  // South
-            "Å®",  // East
+            'Å™',  // North
+            'Å©',  // West
+            'Å´',  // South
+            'Å®',  // East
         };
 
         struct TILE
@@ -93,16 +93,16 @@ namespace _3DDungeonGame_CS
                 for(int x=0; x<MAZE_WIDTH; x++)
                 {
                     pos.x = x;
-                    string floor = "Å@";
+                    char floor = 'Å@';
                     if(pos == m_player.pos)
                     {
                         floor = FloorPlayer[(int)m_player.dir];
                     }else if (pos == m_goal)
                     {
-                        floor = "Çf";
+                        floor = 'Çf';
                     }
-                    string west = GetMazeWall(pos, Direction.West) ? "|" : " ";
-                    string east = GetMazeWall(pos, Direction.East) ? "|" : " ";
+                    char west = GetMazeWall(pos, Direction.West) ? '|' : ' ';
+                    char east = GetMazeWall(pos, Direction.East) ? '|' : ' ';
                     Utility.Printf("{0}{1}{2}", west, floor, east);
                 }
                 Utility.Putchar('\n');
@@ -116,7 +116,7 @@ namespace _3DDungeonGame_CS
             for(int x=0; x<MAZE_WIDTH; x++)
             {
                 pos.x = x;
-                string wall = GetMazeWall(pos, dir) ? "Å\" : "Å@";
+                char wall = GetMazeWall(pos, dir) ? 'Å\' : 'Å@';
                 Utility.Printf("+{0}+", wall);
             }
             Utility.Putchar('\n');
@@ -189,17 +189,17 @@ namespace _3DDungeonGame_CS
                 char c = screen[i];
                 switch (c)
                 {
-                    case ' ': Utility.Printf("Å@"); break;
-                    case '#': Utility.Printf("Å@"); break;
-                    case '_': Utility.Printf("ÅQ"); break;
-                    case '|': Utility.Printf("Åb"); break;
-                    case '/': Utility.Printf("Å^"); break;
-                    case 'L': Utility.Printf("Å_"); break;
+                    case ' ': Utility.Putchar('Å@'); break;
+                    case '#': Utility.Putchar('Å@'); break;
+                    case '_': Utility.Putchar('ÅQ'); break;
+                    case '|': Utility.Putchar('Åb'); break;
+                    case '/': Utility.Putchar('Å^'); break;
+                    case 'L': Utility.Putchar('Å_'); break;
                     case '\n':
                         Utility.Putchar(c);
                         break;
                     default:
-                        Console.Write(string.Format("{0:X}", (int)c));
+                        Console.Write(string.Format("{0:X}\n", (int)c));
                         Debug.Assert(false);
                         break;
                 }
