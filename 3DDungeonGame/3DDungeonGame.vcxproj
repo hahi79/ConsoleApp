@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\Utility.cpp" />
+    <ClCompile Include="..\Common\Vector2.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="IntList.cpp" />
@@ -139,18 +140,17 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector2List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Utility.h" />
+    <ClInclude Include="..\Common\Vector2.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="IntList.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector2List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
