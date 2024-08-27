@@ -97,7 +97,7 @@ void DrawScreen(Stage* stage, DrawMode mode, int turn)
 		"```````````````````````````\n"      // 16
 		"\n");
 
-	PrintCursor(0, 0); printf("%4d‚Ë‚ñ", stage->year);
+	PrintCursor(1, 1); printf("%4d‚Ë‚ñ", stage->year);
 	for (int i = 0; i < stage->castlesSize; i++) {
 		Castle* castle = GetCastle(stage, (CastleId)i);
 		int curx = GetCastleCurx(castle);
@@ -114,7 +114,7 @@ void DrawScreen(Stage* stage, DrawMode mode, int turn)
 //		printf(EscDEFAULT);
 //		printf(EscBgDEFAULT);
 	}
-	PrintCursor(0, 18);
+	PrintCursor(1, 18);
 }
 // ƒ^[ƒ“‚Ì‡”Ô‚ğƒVƒƒƒbƒtƒ‹
 void MakeTurnOrder(Stage* stage)
