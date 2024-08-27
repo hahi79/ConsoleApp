@@ -32,7 +32,7 @@ Command GetPlayerCommand(TurnBattle *btl)
 		case ARROW_DOWN:
 			cmd++;
 			if (cmd >= COMMAND_MAX) {
-				cmd = 0;-------
+				cmd = 0;
 			}
 			break;
 		case DECIDE:
