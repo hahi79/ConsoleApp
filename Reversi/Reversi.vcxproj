@@ -132,18 +132,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\Utility.cpp" />
+    <ClCompile Include="..\Common\Vector2.cpp" />
+    <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Reversi.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector2List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\Utility.h" />
+    <ClInclude Include="..\Common\Vector2.h" />
+    <ClInclude Include="Direction.h" />
     <ClInclude Include="Mode.h" />
     <ClInclude Include="Reversi.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector2List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
