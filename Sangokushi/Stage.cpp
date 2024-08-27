@@ -268,7 +268,7 @@ static void printTurnOrder(Stage *stage, int turn)
 	for (int i = 0; i < stage->castlesSize; i++) {
 		const char* cur = (i == turn) ? "＞" : "　";
 		CastleId id = (CastleId)stage->turnOrder[i];
-		printf("%s%.4s", cur, GetCastleMapName(stage, id));
+		printf("%s%s", cur, GetCastleMapName(stage, id));
 	}
 	putchar('\n');
 	putchar('\n');

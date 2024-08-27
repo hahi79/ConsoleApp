@@ -22,7 +22,7 @@ Castle castles[] =
 			CASTLE_RYOSHU,  // 涼州
 			CASTLE_NONE,
 		},
-		 6, 7,      // 描画位置
+		 7, 7,      // 描画位置
 		"司隸",     // マップ上の名前
 	},
 	// CASTLE_YOSHU  豫州
@@ -39,7 +39,7 @@ Castle castles[] =
 			CASTLE_YOUSHU,  // 揚州
 			CASTLE_NONE,
 		},
-		18, 9,          // 描画位置
+		19, 9,          // 描画位置
 		"豫州",         // マップ上の名前
 	},
 	// CASTLE_KISHU  冀州
@@ -55,7 +55,7 @@ Castle castles[] =
 			CASTLE_YUSHU,   // 幽州
 			CASTLE_NONE,
 		},
-		18, 3,          // 描画位置
+		19, 3,          // 描画位置
 		"冀州",         // マップ上の名前
 	},
 	// CASTLE_ENSHU  兗州
@@ -71,7 +71,7 @@ Castle castles[] =
 			CASTLE_JOSHU,   // 徐州
 			CASTLE_NONE,
 		},
-		18, 6,      // 描画位置
+		19, 6,      // 描画位置
 		"兗州",     // マップ上の名前
 	},
 	// CASTLE_JOSHU  徐州
@@ -87,7 +87,7 @@ Castle castles[] =
 			CASTLE_YOUSHU,  // 揚州
 			CASTLE_NONE,
 		},
-		26, 7,          // 描画位置
+		27, 7,          // 描画位置
 		"徐州",         // マップ上の名前
 	},
 	// CASTLE_KEISHU 荊州
@@ -103,7 +103,7 @@ Castle castles[] =
 			CASTLE_EKISHU,  // 益州
 			CASTLE_NONE,
 		},
-		10,11,      // 描画位置
+		11,11,      // 描画位置
 		"荊州",     // マップ上の名前
 	},
 	// CASTLE_YOUSHU 揚州
@@ -118,7 +118,7 @@ Castle castles[] =
 			CASTLE_KEISHU,  // 荊州
 			CASTLE_NONE,
 		},
-		24,11,          // 描画位置
+		25,11,          // 描画位置
 		"揚州",         // マップ上の名前
 	},
 	// CASTLE_EKISHU 益州
@@ -133,7 +133,7 @@ Castle castles[] =
 			CASTLE_KEISHU,  // 荊州
 			CASTLE_NONE,
 		},
-		 7,11,          // 描画位置
+		 1,11,          // 描画位置
 		"益州",         // マップ上の名前
 	},
 	// CASTLE_RYOSHU 涼州
@@ -146,7 +146,7 @@ Castle castles[] =
 			CASTLE_SHIREI,  // 司隸
 			CASTLE_NONE,
 		},
-		 0, 3,          // 描画位置
+		 1, 3,          // 描画位置
 		"涼州",         // マップ上の名前
 	},
 	// CASTLE_YUSHU 幽州
@@ -159,7 +159,7 @@ Castle castles[] =
 			CASTLE_KISHU,   // 冀州
 			CASTLE_NONE,
 		},
-		28, 1,          // 描画位置
+		29, 1,          // 描画位置
 		"幽州",         // マップ上の名前
 	},
 };
