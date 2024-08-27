@@ -135,24 +135,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\IntList.cpp" />
     <ClCompile Include="..\Common\Utility.cpp" />
     <ClCompile Include="AI.cpp" />
     <ClCompile Include="Castle.cpp" />
     <ClCompile Include="Chronology.cpp" />
-    <ClCompile Include="IntList.cpp" />
     <ClCompile Include="Lord.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\IntList.h" />
     <ClInclude Include="..\Common\Utility.h" />
     <ClInclude Include="AI.h" />
     <ClInclude Include="Castle.h" />
     <ClInclude Include="CastleId.h" />
     <ClInclude Include="Chronology.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="IntList.h" />
     <ClInclude Include="Lord.h" />
     <ClInclude Include="LordId.h" />
     <ClInclude Include="Troop.h" />
