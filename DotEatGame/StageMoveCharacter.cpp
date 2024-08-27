@@ -4,6 +4,7 @@
 #include "Stage.h"
 #include "Character.h"
 #include "Utility.h"  // GetKey(),ARROW_XX
+#include "Direction.h"
 #include <stdio.h>
 
 
