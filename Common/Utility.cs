@@ -80,25 +80,25 @@ namespace GP2
             s_console.Clear();
         }
         // printf()関数
-        public static void Printf(string fmt, params Object[] list)
+        public static void Printf(string fmt, params object[] args)
         {
-            s_console.AppendFormat(fmt, list);
+            s_console.AppendFormat(fmt, args);
         }
         // putchar()関数
         public static void Putchar(Char c)
         {
             s_console.Append(c);
         }
-	// puts()関数
-	public static void Puts(string str)
-	{
-	    s_console.Append(str).Append('\n');
-	}
+        // puts()関数
+        public static void Puts(string str)
+        {
+            s_console.Append(str).Append('\n');
+        }
         // カーソル位置セット
         public static void PrintCursor(int curx,int cury)
         {
             // curx,cury は 1～
-            s_console.AppendFormat("\x1b[{0};{0}H", curx, cury);
+            s_console.AppendFormat("\x1b[{0};{1}H", cury, curx);
         }
         // プリント出力
         public static void PrintOut()
