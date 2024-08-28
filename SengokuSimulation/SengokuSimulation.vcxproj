@@ -139,7 +139,6 @@
     <ClCompile Include="Lord.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="test.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>

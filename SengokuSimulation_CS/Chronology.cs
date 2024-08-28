@@ -2,7 +2,7 @@
 //	戦国シミュレーション 年表
 //======================================
 using System;       // Object
-using System.Text;
+using System.Text;  // StringBuilder
 using Utility = GP2.Utility;
 
 namespace SengokuSimulation_CS
@@ -32,5 +32,5 @@ namespace SengokuSimulation_CS
         {
             Utility.Printf(m_sb.ToString());            
         }
-    }
-}
+    } // class
+} // namespace

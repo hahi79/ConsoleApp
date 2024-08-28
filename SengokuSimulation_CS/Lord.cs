@@ -26,7 +26,8 @@ namespace SengokuSimulation_CS
         string m_familyName;  // 姓
         string m_firstName;   // 名
         string m_mapName;     // マップ上の名前
-                              // コンストラクタ
+
+        // コンストラクタ
         public LordName(string familyName, string firstName, string mapName)
         {
             m_familyName = familyName;

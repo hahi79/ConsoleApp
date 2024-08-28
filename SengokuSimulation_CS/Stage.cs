@@ -1,10 +1,7 @@
 ﻿//======================================
 //	戦国シミュレーション ステージ
-//======================================
-using System.Collections;
-using System.Data;
-using System.Diagnostics;   // Debug
-using System.Numerics;
+//=======================
+using System.Diagnostics;
 using Utility = GP2.Utility;
 
 namespace SengokuSimulation_CS
@@ -77,6 +74,7 @@ namespace SengokuSimulation_CS
         {
             m_playerLord = GetCastleOwner(castleId);
         }
+        // 画面描画
         public void DrawScreen(DrawMode drawMode, int turn)
         {
             Utility.ClearScreen();
@@ -127,7 +125,7 @@ namespace SengokuSimulation_CS
             Utility.Putchar('\n');
             Utility.Putchar('\n');
         }
-
+        // 次の年へ
         public void NextYear()
         {
             m_year++;
@@ -144,7 +142,7 @@ namespace SengokuSimulation_CS
                 }
             }
         }
-        // 
+        // 「本能寺の変」か?
         public bool IsHonnojiEvent()
         {
             // 1592年で二条城のオーナーは織田信長?
@@ -334,7 +332,7 @@ namespace SengokuSimulation_CS
                 // 攻撃側の負け
                 Utility.Printf("{0}ぐん　かいめつ！！\n"
                     , GetLordFamilyName(offenseLord)
-);
+                );
                 Utility.Putchar('\n');
                 Utility.Printf("{0}ぐんが　{1}を　まもりきりました！\n"
                     , GetLordFamilyName(defenseLord)
@@ -445,5 +443,5 @@ namespace SengokuSimulation_CS
             }
             return id;
         }
-    }
-}
+    } // class
+} // namespace 
