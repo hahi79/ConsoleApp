@@ -190,6 +190,5 @@ namespace Sangokushi_CS
         {
             get { return s_castles; }
         }
-
     } // class
 } // namespace 
