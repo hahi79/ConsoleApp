@@ -93,7 +93,7 @@ namespace SengokuSimulation_CS
             {
                 c = Utility.GetKey();
                 num = getDigit(c);
-                Console.WriteLine("Key:" + c + " num;" + num + "\n");
+                //Console.WriteLine("Key:" + c + " num;" + num + "\n");
             } while (num < min || max < num);
             return num;
         }
