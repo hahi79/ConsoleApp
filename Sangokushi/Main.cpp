@@ -92,8 +92,7 @@ static void DrawEnding(Stage* stage)
     int year = stage->year + 3;
     const char* name1 = GetLordFamilyName(stage, stage->playerLord);
     const char* name2 = GetLordFirstName(stage, stage->playerLord);
-    printf("%dねん　 %s %sが　せいいたいしょうぐんに　にんぜられる\n", year, name1, name2);
-    printf("%dねん　%s%sが　%sばくふを　ひらく\n", year, name1, name2, name1);
+    printf("%dねん　 %s(%s)が　てんかを　とういつする\n", year, name1, name2);
     putchar('\n');
     printf("ＴＨＥ　ＥＮＤ");
     WaitKey();
