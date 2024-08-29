@@ -75,8 +75,9 @@ void ClearScreen()
 		HANDLE h = GetStdHandle(-11);
 		SetConsoleMode(h, 0x07);
 	}
+
 	printf("\x1b[2J"	// 画面クリア
-		"\x1b[0;0H");	// カーソルを0,0に
+		"\x1b[1;1H");	// カーソルを1,1に
 #endif
 }
 // カーソル位置セット
