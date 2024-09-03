@@ -22,5 +22,7 @@ typedef enum {
 Vector2 GetLocationVector2(Direction dir, Location loc);
 // 方向とロケーションから、アスキーアート文字列を取得
 const char* GetLocationAA(Location loc, Direction dir);
+// ロケーション範囲チェック
+bool IsInLocation(Location loc);
 
 #endif // __LOCATION_H

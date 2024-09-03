@@ -166,7 +166,7 @@ void Draw3D(Stage* stage)
 			if (aa == nullptr) {
 				continue;
 			}
-			// screen にコピー
+			// aa[] を screen[]へ空白以外をコピーします。
 			for (int k = 0; k < sizeof(screen)-1; k++) {
 				const char c = aa[k];
 				if (c != ' ' ) {
@@ -232,22 +232,21 @@ bool CanDigWall(Stage* stage, Vector2 pos, Direction dir)
 	}
 	return true;
 }
-
 // mazeのposのdir セッター
 void SetMazeWall(Stage *stage, Vector2 pos, Direction dir, bool value)
 {
-	if (IsInsideMaze(pos)) {
+	if (IsInsideMaze(pos) && IsInDirection(dir)) {
 		stage->maze[pos.y][pos.x].walls[dir] = value;
 	}
 }
+// mazeのposのdir ゲッター
 bool GetMazeWall(Stage* stage, Vector2 pos, Direction dir)
 {
-	if (IsInsideMaze(pos)) {
+	if (IsInsideMaze(pos) && IsInDirection(dir)) {
 		return stage->maze[pos.y][pos.x].walls[dir];
 	}
 	return false;
 }
-
 // 座標がmaze内か?
 bool IsInsideMaze(Vector2 pos)
 {

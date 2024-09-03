@@ -14,6 +14,7 @@ void InitCharacter(Character* ch, Vector2 pos, Direction dir)
 //@Œã‚ë‚ğŒü‚­
 void TurnBackCharacter(Character* ch)
 {
+	// –k©¨“ìA¼©¨“Œ
 	ch->dir = DirectionAdd(ch->dir, 2);
 }
 // ¶‚ğŒü‚­
