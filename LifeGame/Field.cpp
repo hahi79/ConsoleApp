@@ -30,6 +30,7 @@ void InitializeField(Field* field, int width, int height, bool isLoopCells)
 	clearCells(field, field->cells[1]);
 	field->currentIdx = 0;
 	field->isLoopCells = isLoopCells;
+	field->stepCount = 0;
 }
 // 後始末
 void FinalizeField(Field* field)
@@ -44,6 +45,8 @@ void DrawField(Field* field)
 {
 	bool *cells = field->cells[field->currentIdx];
 	drawCells(field, cells);
+
+	printf("ステップ:%d\n", field->stepCount);
 }
 // シミュレーション1ステップ進める
 void StepSimulation(Field* field)
@@ -73,6 +76,7 @@ void StepSimulation(Field* field)
 		}
 	}
 	field->currentIdx = nextIdx;
+	field->stepCount++;
 }
 
 // パターンを転送する
@@ -83,6 +87,8 @@ void TransferPattern(Field* field, Pattern* pattern)
 	int dstY = field->height / 2 - pattern->height / 2;
 	clearCells(field, field->cells[field->currentIdx]);
 	transferPattern(field, dstX, dstY, pattern->width, pattern->height, pattern->data);
+	// ステップ数、初期化
+	field->stepCount = 0;
 }
 
 // パターンを転送する

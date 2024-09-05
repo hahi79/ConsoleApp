@@ -11,6 +11,7 @@ typedef struct {
 	bool* cells[2];  // フィールド配列(width×height) 2セット
 	int currentIdx;  // カレントのフィールドセット(0 or 1)
 	bool isLoopCells; // フィールドの左右、上下がループしているか?
+	int stepCount;    // ステップ数
 } Field;
 
 // 初期化
