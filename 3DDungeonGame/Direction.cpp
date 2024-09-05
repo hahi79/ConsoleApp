@@ -13,7 +13,7 @@ Vector2 GetDirVector2(Direction d)
 		{ 0, 1},  //DIR_SOUTH,
 		{ 1, 0},  //DIR_EAST,
 	};
-	assert(0 <= d && d < DIR_MAX);
+	assert( IsInDirection(d) );
 	return dirVector2[d];
 }
 
@@ -22,4 +22,9 @@ Direction DirectionAdd(Direction dir, int add)
 {
 	int tmp = dir + add;
 	return (Direction)((tmp + DIR_MAX) % DIR_MAX);
+}
+// ディレクション範囲チェック
+bool IsInDirection(Direction d)
+{
+	return 0 <= d && d < DIR_MAX;
 }

@@ -9,7 +9,7 @@
 void MovePlayerForMap(Stage* stage, Key c);
 void MovePlayerFor3D(Stage* stage, Key c);
 
-
+// ƒvƒŒ[ƒ„‚ÌˆÚ“®
 bool MovePlayer(Stage* stage)
 {
 	Key c = GetKey();

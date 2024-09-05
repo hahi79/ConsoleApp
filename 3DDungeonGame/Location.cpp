@@ -47,11 +47,11 @@ static Vector2 locations[DIR_MAX][LOC_MAX] = {
 	             //                             +--+--+--+
 	},
 };
-
+// 方向とロケーションから、オフセットベクター取得
 Vector2 GetLocationVector2(Direction dir, Location loc)
 {
-	assert(0 <= dir && dir < DIR_MAX);
-	assert(0 <= loc && loc < LOC_MAX);
+	assert(IsInDirection(dir));
+	assert(IsInLocation(loc));
 	return locations[dir][loc];
 }
 
@@ -278,10 +278,15 @@ const char* aaTable[LOC_MAX][DIR_MAX] =
 		east,           // DIR_EAST (右方)
 	},
 };
-
+// 方向とロケーションから、アスキーアート文字列を取得
 const char* GetLocationAA(Location loc,Direction dir)
 {
-	assert(0 <= dir && dir < DIR_MAX);
-	assert(0 <= loc && loc < LOC_MAX);
+	assert(IsInDirection(dir));
+	assert(IsInLocation(loc));
 	return aaTable[loc][dir];
+}
+// ロケーション範囲チェック
+bool IsInLocation(Location loc)
+{
+	return 0 <= loc && loc < LOC_MAX;
 }

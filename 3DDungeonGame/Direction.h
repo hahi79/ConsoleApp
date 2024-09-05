@@ -20,5 +20,7 @@ typedef enum {
 Vector2 GetDirVector2(Direction d);
 // ディレクションの加算
 Direction DirectionAdd(Direction dir, int add);
+// ディレクション範囲チェック
+bool IsInDirection(Direction d);
 
 #endif // __DIRECTION_H
