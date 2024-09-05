@@ -7,6 +7,10 @@
 #include <stdio.h>   // printf()
 #include <stdlib.h>  // rand(), RAND_MAX
 
+// 関数プロトタイプ
+void setIndicateColor(Character* ch);
+
+
 // 呪文の消費MP
 static const int SPELL_COST = 3;
 
@@ -61,16 +65,20 @@ void UseSpellCharacter(Character* ch)
 // プレーヤ表示を行う
 void IndicatePlayer(Character* ch)
 {
+	setIndicateColor(ch);
 	printf("%s\n", ch->name);
 	printf("ＨＰ：%3d／%d　ＭＰ：%2d／%d\n", ch->hp, ch->maxHp, ch->mp, ch->maxMp);
+	printf(EscDEFAULT);
 }
 // エネミー表示を行う
 void IndicateEnemy(Character* ch)
 {
+	setIndicateColor(ch);
 	if (ch->isEraseAa == false) {
 		printf("%s", ch->aa);
 	}
 	printf("（ＨＰ：%3d／%d）\n", ch->hp, ch->maxHp);
+	printf(EscDEFAULT);
 }
 // 攻撃力から与えるダメージを計算
 int CalcDamage(Character* ch)
@@ -97,4 +105,18 @@ bool IsEscapeCharacter(Character* ch)
 void SetEraseAa(Character* ch)
 {
 	ch->isEraseAa = true;
+}
+// HP/maxHPによって表示色を変える
+void setIndicateColor(Character* ch)
+{
+	float rate = (float)ch->hp / ch->maxHp;
+	if (rate < 0.2f) {
+		printf(EscRED);
+	}
+	else if (rate < 0.3333f) {
+		printf(EscYELLOW);
+	}
+	else {
+		printf(EscWHITE);
+	}
 }
