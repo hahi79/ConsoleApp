@@ -82,8 +82,10 @@ void DrawScreen(Stage* stage,DrawMode mode)
 	case DM_CLEAR: msg = "ÇrÇsÇ`ÇfÇdÅ@ÇbÇkÇdÇ`Çq"; len = 11; break;
 	}
 	if (msg != nullptr) {
+		const int SCREEN_WIDTH = FIELD_WIDTH + 2;
+		const int SCREEN_HEIGHT = FIELD_HEIGHT + 2;
 		SaveCursor();
-		PrintCursor((FIELD_WIDTH - len) / 2 * 2 + 1, FIELD_HEIGHT / 2 + 1);
+		PrintCursor((SCREEN_WIDTH - len) / 2 * 2 + 1, SCREEN_HEIGHT / 2 + 1);
 		printf(msg);
 		RestoreCursor();
 	}
