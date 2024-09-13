@@ -4,6 +4,7 @@
 #include "Stage.h"
 #include "Utility.h"
 #include <stdio.h>
+#include <math.h>
 
 // 関数プロトタイプ
 static void InitPaddle(Stage* stage);
@@ -13,6 +14,8 @@ static bool IsInField(int x, int y);
 static bool IsBallPosition(Stage* stage, int x, int y);
 static bool IsPaddlePosition(Stage* stage, int x, int y);
 static void DrawHorizontalWall();
+static float ReverseVelocity(float velocity, int sign);
+static float AddVelocity(float velocity, float add);
 
 const char* AA_WALL = "■";
 const char* AA_BALL = "●";
@@ -56,8 +59,10 @@ void ResetBall(Stage* stage)
 	// ボールの速度、Yは下(1)へ、Xは乱数で左(-1)または右(1)にします
 	stage->ballX = GetRand(FIELD_WIDTH);
 	stage->ballY = FIELD_HEIGHT / 3;
-	stage->ballVelocityX = GetRand(2) == 0 ? 1 : -1;
-	stage->ballVelocityY = 1;
+	stage->ballVelocityX_f = GetRand(2) == 0 ? 1 : -1;
+	stage->ballVelocityY_f = 1;
+	stage->ballX_f = stage->ballX;
+	stage->ballY_f = stage->ballY;
 }
 void DrawScreen(Stage* stage, DrawMode mode)
 {
@@ -135,23 +140,34 @@ static void DrawHorizontalWall()
 // ボールの移動
 void MoveBall(Stage* stage)
 {
-	stage->ballX += stage->ballVelocityX;
-	stage->ballY += stage->ballVelocityY;
+	stage->ballX_f += stage->ballVelocityX_f;
+	stage->ballY_f += stage->ballVelocityY_f;
+	stage->ballX = (int)floor(stage->ballX_f + 0.5f);
+	stage->ballY = (int)floor(stage->ballY_f + 0.5f);
 
 	// ボールが端にあるなら速度反転
 	if (stage->ballX <= 0) {
-		stage->ballVelocityX = 1;
+		stage->ballVelocityX_f = ReverseVelocity(stage->ballVelocityX_f,1);
 	}
 	else if (stage->ballX >= FIELD_WIDTH - 1) {
-		stage->ballVelocityX = -1;
+		stage->ballVelocityX_f = ReverseVelocity (stage->ballVelocityX_f,- 1);
 	}
 	if (stage->ballY <= 0) {
-		stage->ballVelocityY = 1;
+		stage->ballVelocityY_f = ReverseVelocity(stage->ballVelocityY_f,1);
 	}
 	else if (stage->ballY >= FIELD_HEIGHT - 1) {
-		stage->ballVelocityY = -1;
+		stage->ballVelocityY_f = ReverseVelocity (stage->ballVelocityY_f,- 1);
 	}
 	// ボールがハドルに当たったら反射
+#if true
+	if (IsPaddlePosition(stage, stage->ballX, stage->ballY + 1)) {
+		int x = (stage->ballX < stage->paddleX + PADDLE_WIDTH / 2) ? -1 : 1;
+		stage->ballVelocityX_f = ReverseVelocity(stage->ballVelocityX_f, x);
+		stage->ballVelocityY_f = ReverseVelocity(stage->ballVelocityY_f, - 1);
+		float addX = (GetRand(3) - 1) * 0.1f;
+		stage->ballVelocityX_f = AddVelocity(stage->ballVelocityX_f, addX);
+	}
+#else
 	if (stage->ballY == stage->paddleY - 1) {
 		if (stage->ballX >= stage->paddleX - 1
 			&& stage->ballX <= stage->paddleX + PADDLE_WIDTH + 1) {
@@ -159,12 +175,13 @@ void MoveBall(Stage* stage)
 			stage->ballVelocityY = -1;
 		}
 	}
+#endif
 	// ボールの上3コマのブロックを消す
 	for (int x = stage->ballX - 1; x <= stage->ballX + 1; x++) {
 		int y = stage->ballY - 1;
 		if (GetField(stage, x, y) == FIELD_BLOCK) {
 			SetField(stage, x, y, FIELD_NONE);
-			stage->ballVelocityY = 1;
+			stage->ballVelocityY_f = 1;
 		}
 	}
 }
@@ -226,4 +243,33 @@ static bool IsInField(int x, int y)
 	// (x,y)がフィールド内か判定して、真偽を返します
 	return 0 <= x && x < FIELD_WIDTH
 		&& 0 <= y && y < FIELD_HEIGHT;
+}
+// 速度を反転する(sign:+1/-1)
+static float ReverseVelocity(float velocity, int sign)
+{
+	velocity = fabsf(velocity) * sign;
+	return velocity;
+}
+// 速度を加算する
+static float AddVelocity(float velocity, float add)
+{
+	const float LIMIT = 0.1f;
+	velocity += add;
+	if (velocity >=0) {
+		if (velocity < 1 - LIMIT) {
+			velocity = 1 - LIMIT;
+		}
+		else if (velocity > 1 + LIMIT) {
+			velocity = 1 + LIMIT;
+		}
+	}
+	else {
+		if (velocity < -1 - LIMIT) {
+			velocity = -1 - LIMIT;
+		}
+		else if (velocity > -1 + LIMIT) {
+			velocity = -1 + LIMIT;
+		}
+	}
+	return velocity;
 }
