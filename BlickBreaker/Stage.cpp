@@ -133,11 +133,8 @@ void MoveBall(Stage* stage)
 	}
 	// ボールがハドルに当たったら反射
 	if (IsPaddlePosition(stage, stage->ballX, stage->ballY + 1)) {
-		if (stage->ballX >= stage->paddleX - 1
-			&& stage->ballX <= stage->paddleX + PADDLE_WIDTH + 1) {
-			stage->ballVelocityX = (stage->ballX < stage->paddleX + PADDLE_WIDTH / 2) ? -1 : 1;
-			stage->ballVelocityY = -1;
-		}
+		stage->ballVelocityX = (stage->ballX < stage->paddleX + PADDLE_WIDTH / 2) ? -1 : 1;
+		stage->ballVelocityY = -1;
 	}
 	// ボールの上3コマのブロックを消す
 	for (int x = stage->ballX - 1; x <= stage->ballX + 1; x++) {
@@ -180,6 +177,7 @@ static void SetField(Stage* stage, int x, int y, Field value)
 		stage->field[y][x] = value;
 	}
 }
+// フィールドのゲッター
 static Field GetField(Stage* stage, int x, int y)
 {
 	if (IsInField(x, y)) {
