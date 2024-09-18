@@ -362,8 +362,8 @@ static int getCastleCount(Stage* stage, LordId lord)
 {
 	int castleCount = 0;
 	for (int i = 0; i < stage->castlesSize; i++) {
-		Castle* castle = GetCastle(stage, (CastleId)i);
-		if (castle->owner == lord) {
+		LordId owner = GetCastleOwner(stage, (CastleId)i);
+		if (owner == lord) {
 			castleCount++;
 		}
 	}
