@@ -106,6 +106,16 @@ namespace GP2
             Console.Clear();
             Console.Write(s_console.ToString());
         }
+        // カーソル位置を保存
+        public static void SaveCursor()
+        {
+            s_console.Append("\x1b[s");
+        }
+        // カーソル位置を復帰
+        public static void RestoreCursor()
+        {
+            s_console.Append("\x1b[u");
+        }
         // m秒スリープ
         public static void Sleep_mSec(int mSec)
         {
