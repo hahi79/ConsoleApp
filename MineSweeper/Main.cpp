@@ -36,10 +36,18 @@ void game()
 		DrawScreen(stage);
 		Key c = GetKey();
 		switch (c) {
-		case ARROW_UP:  MoveCursor(stage, 0, -1); break;
-		case ARROW_DOWN: MoveCursor(stage, 0, 1); break;
-		case ARROW_LEFT:  MoveCursor(stage, -1, 0); break;
-		case ARROW_RIGHT: MoveCursor(stage, 1, 0); break;
+		case ARROW_UP:
+			MoveCursor(stage, 0, -1);
+			break;
+		case ARROW_DOWN:
+			MoveCursor(stage, 0, 1);
+			break;
+		case ARROW_LEFT:
+			MoveCursor(stage, -1, 0);
+			break;
+		case ARROW_RIGHT:
+			MoveCursor(stage, 1, 0);
+			break;
 		case 'f':  // ƒtƒ‰ƒOon/off
 			FlipCursorFlag(stage);
 			break;

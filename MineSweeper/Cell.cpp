@@ -3,7 +3,6 @@
 //======================================
 #include "Cell.h"
 
-
 void SetupCell(Cell* cell)
 {
 	cell->bomb = false;
