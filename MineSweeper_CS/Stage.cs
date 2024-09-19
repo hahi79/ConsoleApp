@@ -202,7 +202,6 @@ namespace MineSweeper_CS
             int open1 = FIELD_WIDTH * FIELD_HEIGHT - hideCount;   // 開放済の数
             int open2 = FIELD_WIDTH * FIELD_HEIGHT - bombCount; // 開放すべき数
             Utility.Printf("開放　　　　:{0,3}/{1,3}\n", open1, open2);
-
         }
         // カーソル位置か?
         protected bool IsCursorPosition(int x,int y)
