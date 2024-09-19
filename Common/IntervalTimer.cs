@@ -1,7 +1,7 @@
 ﻿//======================================
 //      インターバル・タイマー
 //======================================
-using System;  // DateTime, TimeSpace
+using System;  // DateTime, TimeSpan
 
 namespace GP2
 {

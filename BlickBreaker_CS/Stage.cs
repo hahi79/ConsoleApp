@@ -1,11 +1,7 @@
 ﻿//======================================
-//      ブロックくずし　メイン
+//      ブロックくずし　ステージ
 //======================================
-
-using GP2;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Security.Cryptography.X509Certificates;
+using Utility = GP2.Utility;
 
 namespace BlickBreaker_CS
 {
@@ -16,7 +12,7 @@ namespace BlickBreaker_CS
         BLOCK, // ブロック
         OUT,   // (外側)
     }
-    // DrawScreenモージ
+    // DrawScreenモード
     enum DrawMode
     {
         READY,
@@ -245,6 +241,5 @@ namespace BlickBreaker_CS
             return 0 <= x && x < FIELD_WIDTH
                 && 0 <= y && y < FIELD_HEIGHT;
         }
-    }
-
-}
+    } // class
+} // namespace
