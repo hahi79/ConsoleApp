@@ -1,4 +1,7 @@
-﻿using Utility = GP2.Utility;
+﻿//======================================
+//	マインスィーパー メイン
+//======================================
+using Utility = GP2.Utility;
 using System;   // ConsoleKey
 
 namespace MineSweeper_CS
